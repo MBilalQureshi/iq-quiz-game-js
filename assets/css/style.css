@@ -10,19 +10,17 @@ font-family: 'Roboto', sans-serif; */
 	border: none;
 }
 
+body{
+    background: #000 url("../images/background.webp") no-repeat center center;
+    background-size: cover;
+    min-height: calc(120vh - 150px);
+}
+
 #logo{
     font-family: 'Bebas Neue', sans-serif;
     text-align: center;
     font-size: xxx-large;
     line-height: 1.5em;
-    /* background-color: #000;
-    color: #fff; */
-}
-
-#main-img{
-    background: #000 url("../images/background.webp") no-repeat center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    position: fixed;
+    background-color: #fff;
+    color: #000;
 }
