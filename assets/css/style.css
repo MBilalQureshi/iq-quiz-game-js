@@ -13,7 +13,7 @@ font-family: 'Roboto', sans-serif; */
 body{
     background: #000 url("../images/background.webp") no-repeat center center;
     background-size: cover;
-    min-height: calc(120vh - 150px);
+    min-height: calc(100vh - 150px);
 }
 
 #logo{
@@ -32,9 +32,11 @@ body{
     transform: translate(-50%, -50%);
     left: 50%;
     width: fit-content;
-    height: fit-content;
+    height: 70%;
     text-align: center;
     border-radius: 0.8em;
+    display: flex;
+    align-items: center;
 }
 
 #user-name-label{
