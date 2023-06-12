@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     userNameLabel.style.display='none';
                     difficultyPanel.style.display="block";
                     mainLabel.style.display="block";
-                    
+                    document.getElementById("given-user-name").innerText = userName;
 
                 }
             } else {
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
         })
         
+       
         let difficultyList = document.getElementById("u-list");
         difficultyList.addEventListener("click",function(event){
                 let level = event.target.innerText;
