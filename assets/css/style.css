@@ -11,7 +11,7 @@ font-family: 'Roboto', sans-serif; */
 }
 
 body{
-    background: #000 url("../images/background.webp") no-repeat center center;
+    background: #000000 url("../images/background.webp") no-repeat center center;
     background-size: cover;
     min-height: calc(100vh - 150px);
 }
@@ -25,22 +25,22 @@ body{
     color: #000;
 }
 
-.main-label{
+.main-label,.main-label-difficulty-panel{
     background-color: #fff;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
-    width: fit-content;
+    width: 50%;
     height: 70%;
     text-align: center;
     border-radius: 0.8em;
-    display: flex;
-    align-items: center;
 }
 
-#user-name-label{
+#user-name-label, #choose-difficulty-panel{
     padding: 16px 16px 16px 16px;
+    margin-top: 15%;
+    line-height: 60px;
 }
 
 p, input,button,#no-user-name-msg { 
@@ -60,3 +60,16 @@ input[type="text"]{
 #start-game-btn{
     padding: 8px 8px 8px 8px;
 }
+
+ul {
+    font-family: 'Oswald', sans-serif;  
+    list-style-type:none;
+    border: 2px solid #000;
+    border-radius: 0.8em;
+}
+li:hover{
+    color:#fff;
+    background-color: #000;
+    border-radius: 0.8em;
+}
+
