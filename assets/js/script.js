@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     userNameLabel.style.display='none';
                     difficultyPanel.style.display="block";
                     mainLabel.style.display="block";
+                    
 
                 }
             } else {
@@ -38,6 +39,22 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             
         })
+        
+        let difficultyList = document.getElementById("u-list");
+        difficultyList.addEventListener("click",function(event){
+                let level = event.target.innerText;
+                if(level === "Easy"){
+                    alert("Easy");
+            
+                } else if(level === "Medium"){
+                    alert("Medium");
+                }else if(level === "Hard"){
+                    alert("Hard");
+                }else{
+                    alert("None");
+                }
+            });
+        
     }
     // hideAndShowSections(userNameLabel,difficultyPanel);
 });
@@ -49,4 +66,15 @@ document.addEventListener("DOMContentLoaded", function() {
 // window.onload = function(){
 //     document.getElementById('user-name-label').style.display = "block";
 //     document.getElementById('choose-difficulty-panel').style.display = "none";;
+// }
+// function setDifficulty(event){
+//     let level = event.value;
+//     if(level === "Easy"){
+//         alert("Easy");
+
+//     } else if(level === "Medium"){
+//         alert("Medium");
+//     }else{
+//         alert("Hard");
+//     }
 // }
