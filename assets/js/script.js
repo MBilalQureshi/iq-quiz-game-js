@@ -5,17 +5,19 @@ document.addEventListener("DOMContentLoaded", function() {
     let mainLabel = document.getElementsByClassName('main-label')[1];
     let difficultyPanel = document.getElementById('choose-difficulty-panel');
     userNameLabel.style.display='block';
+    document.getElementById('questions-sec').style.display = "none"
     // difficultyPanel.style.display="block";
     mainLabel.style.display="none";
+    document.getElementsByClassName('main-label')[2].style.display = "none";
     let buttons = this.getElementsByTagName("button");
 
     // this.getElementById('choose-difficulty-panel').style.display = 'none'
-
     for(let button of buttons){
         button.addEventListener("click",function(){
 
             if(this.id === "start-game-btn"){
                 let userName = document.getElementById("user-name").value;
+                localStorage.setItem("user-name",userName);
                 if(userName === ""){
                     document.getElementById("no-user-name-msg").innerText = "Kindly provide a user name";
                 }else{
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     userNameLabel.style.display='none';
                     difficultyPanel.style.display="block";
                     mainLabel.style.display="block";
-                    document.getElementById("given-user-name").innerText = userName;
+                    document.getElementsByClassName("given-user-name")[0].innerText = userName;
 
                 }
             } else {
@@ -44,16 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
         let difficultyList = document.getElementById("u-list");
         difficultyList.addEventListener("click",function(event){
                 let level = event.target.innerText;
-                if(level === "Easy"){
-                    alert("Easy");
-            
-                } else if(level === "Medium"){
-                    alert("Medium");
-                }else if(level === "Hard"){
-                    alert("Hard");
-                }else{
-                    alert("None");
-                }
+                mainLabel.style.display="none";                
+                document.getElementById('questions-sec').style.display = "block"
+                document.getElementsByClassName('main-label')[2].style.display = "block";
+                document.getElementsByClassName("given-user-name")[1].innerHTML = localStorage.getItem("user-name");
+                startGame(level);              
             });
         
     }
@@ -79,3 +76,54 @@ document.addEventListener("DOMContentLoaded", function() {
 //         alert("Hard");
 //     }
 // }
+
+function startGame(gameDifficulty){
+    if(gameDifficulty === "Easy"){
+        // easy question array
+        const easyQuestions = [
+            {
+                question:"This is question u know",
+                answers:[
+                    {
+                        text:"I am valid", correct:true,
+                        text:"I am invalid",correct:false,
+                        text:"I am invalid",correct:false,
+                        text:"I am invalid",correct:false
+                    }
+                ]
+            }
+        ];
+    } else if(gameDifficulty === "Medium"){
+        // Medium question array
+        const mediumQuestions = [
+            {
+                question:"This is question u know",
+                answers:[
+                    {
+                        text:"I am valid", correct:true,
+                        text:"I am invalid",correct:false,
+                        text:"I am invalid",correct:false,
+                        text:"I am invalid",correct:false
+                    }
+                ]
+            }
+        ];
+    }else if(gameDifficulty === "Hard"){
+        // Hard question array
+        const hardQuestions = [
+            {
+                question:"This is question u know",
+                answers:[
+                    {
+                        text:"I am valid", correct:true,
+                        text:"I am invalid",correct:false,
+                        text:"I am invalid",correct:false,
+                        text:"I am invalid",correct:false
+                    }
+                ]
+            }
+        ];
+    }else{
+        alert("None");
+    }
+}
