@@ -4,7 +4,8 @@ const easyLvlQuestions = [
         question:"2+2?",
         options:[5,8,4,1],
         correct:4
-    },{
+    },
+    {
         id:2,
         question:"3+2?",
         options:[5,8,4,1],
@@ -151,9 +152,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 ++invalidAnswerCounter;
                 document.getElementById("incorrect-ans").innerText = invalidAnswerCounter;
             }
-            difficultyList.click();
-            console.log(level);
-            console.log(easyLvlQuestions);      
+            let totalQuestions = validAnswerCounter + invalidAnswerCounter
+            console.log("The total is"+totalQuestions)
+            if(totalQuestions <= 4){
+                difficultyList.click();
+            }else{
+                // Main score
+                alert("The end");
+            }
         });
         
     }
@@ -163,35 +169,44 @@ document.addEventListener("DOMContentLoaded", function() {
 function startGame(gameDifficulty){
     if(gameDifficulty === "Easy"){
         // easy question array
-        setGameArea(easyLvlQuestions);      
+        setGameArea(easyLvlQuestions,gameDifficulty);      
     } else if(gameDifficulty === "Medium"){
         // Medium question array
-        setGameArea(mediumLvlQuestions);
+        setGameArea(mediumLvlQuestions,gameDifficulty);
     }else if(gameDifficulty === "Hard"){
         // Hard question array
-        setGameArea(hardLvlQuestions);
+        setGameArea(hardLvlQuestions,gameDifficulty);
     }else{
         alert("None");
     }
 }
-function setGameArea(gameQuestions){
+function setGameArea(gameQuestions,gameDifficulty){
     // First shuffle questions
     let randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
     document.getElementById("questions-sec").children[0].innerText = randomGeneratedQuestions[0].question;
     let options = document.getElementById("options-list");
     // console.log(randomGeneratedQuestions[0].options[1]);
-    for(let i = 0 ; i <= 4 ; i++){
-        options.children[i].innerText = randomGeneratedQuestions[0].options[i];
-    }
-    // options.children[1].innerText = randomGeneratedQuestions[0].options[1];
-    // options.children[2].innerText = randomGeneratedQuestions[0].options[2];
-    // options.children[3].innerText = randomGeneratedQuestions[0].options[3];
+    // for(let i = 0 ; i <= 4 ; i++){
+    //     options.children[i].innerText = randomGeneratedQuestions[0].options[i];
+    //     console.log(i);
+    // }
+    options.children[0].innerText = randomGeneratedQuestions[0].options[0];
+    options.children[1].innerText = randomGeneratedQuestions[0].options[1];
+    options.children[2].innerText = randomGeneratedQuestions[0].options[2];
+    options.children[3].innerText = randomGeneratedQuestions[0].options[3];
 
     //Valid answer
     correctAnswer = randomGeneratedQuestions[0].correct;
 
+    console.log("The length is "+easyLvlQuestions.length);
     // removing questios that were asked
-    easyLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
-    console.log(easyLvlQuestions.length);
-
+    if (gameDifficulty === "Easy") {
+        easyLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
+    } else if(gameDifficulty === "Medium"){
+        mediumLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
+    }else{
+        hardLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
+    }
+    
+    
 }
