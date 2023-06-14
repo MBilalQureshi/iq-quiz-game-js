@@ -39,7 +39,7 @@ body{
 
 #user-name-label, #choose-difficulty-panel,#questions-sec{
     padding: 16px 16px 16px 16px;
-    margin-top: 15%;
+    margin-top: 5%;
     line-height: 60px;
 }
 
@@ -83,6 +83,11 @@ li:hover{
 .given-user-name{
     margin-left: 4px;
 }
-
+#next-button{
+    margin-top: 8px;
+}
+#score > p{
+    font-size: large;
+}
 
 

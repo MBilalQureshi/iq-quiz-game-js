@@ -1,14 +1,22 @@
 const easyLvlQuestions = [
     {
-        question:"This is question u know",
-        answers:[
-            {
-                text:"I am valid", correct:true,
-                text:"I am invalid",correct:false,
-                text:"I am invalid",correct:false,
-                text:"I am invalid",correct:false
-            }
-        ]
+        question:"2+2?",
+        options:[5,8,4,1],
+        correct:4
+    },{
+        question:"3+2?",
+        options:[5,8,4,1],
+        correct:5
+    },
+    {
+        question:"1+2?",
+        options:[5,2,4,1],
+        correct:3
+    },
+    {
+        question:"4+2?",
+        options:[5,6,4,1],
+        correct:6
     }
 ];
 const mediumLvlQuestions = [
@@ -74,6 +82,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementsByClassName("given-user-name")[0].innerText = userName;
 
                 }
+            }else if(this.id === "next-button"){
+                //load next set of questions
+                //calculate score to show in the end
+                alert("next button");
             } else {
                 alert("Something is broken");
                 throw("Something is broken");
@@ -135,6 +147,13 @@ function startGame(gameDifficulty){
     }
 }
 function setGameArea(gameQuestions){
-    document.getElementById("questions-sec").children[0].innerText = gameQuestions[0].question;
-    console.log(gameQuestions.question);
+    // First shuffle questions
+    const randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
+    document.getElementById("questions-sec").children[0].innerText = randomGeneratedQuestions[0].question;
+    let options = document.getElementById("options-list");
+    // console.log(randomGeneratedQuestions[0].options[1]);
+    options.children[0].innerText = randomGeneratedQuestions[0].options[0];
+    options.children[1].innerText = randomGeneratedQuestions[0].options[1];
+    options.children[2].innerText = randomGeneratedQuestions[0].options[2];
+    options.children[3].innerText = randomGeneratedQuestions[0].options[3];
 }
