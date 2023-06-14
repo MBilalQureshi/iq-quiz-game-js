@@ -25,28 +25,52 @@ const easyLvlQuestions = [
 ];
 const mediumLvlQuestions = [
     {
-        question:"This is question u know",
-        answers:[
-            {
-                text:"I am valid", correct:true,
-                text:"I am invalid",correct:false,
-                text:"I am invalid",correct:false,
-                text:"I am invalid",correct:false
-            }
-        ]
+        id:1,
+        question:"2+2?",
+        options:[5,8,4,1],
+        correct:4
+    },{
+        id:2,
+        question:"3+2?",
+        options:[5,8,4,1],
+        correct:5
+    },
+    {
+        id:3,
+        question:"1+2?",
+        options:[3,2,4,1],
+        correct:3
+    },
+    {
+        id:4,
+        question:"4+2?",
+        options:[5,6,4,1],
+        correct:6
     }
 ];
 const hardLvlQuestions = [
     {
-        question:"This is question u know",
-        answers:[
-            {
-                text:"I am valid", correct:true,
-                text:"I am invalid",correct:false,
-                text:"I am invalid",correct:false,
-                text:"I am invalid",correct:false
-            }
-        ]
+        id:1,
+        question:"2+2?",
+        options:[5,8,4,1],
+        correct:4
+    },{
+        id:2,
+        question:"3+2?",
+        options:[5,8,4,1],
+        correct:5
+    },
+    {
+        id:3,
+        question:"1+2?",
+        options:[3,2,4,1],
+        correct:3
+    },
+    {
+        id:4,
+        question:"4+2?",
+        options:[5,6,4,1],
+        correct:6
     }
 ];
 let correctAnswer;
@@ -106,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     level = localStorage.getItem("difficulty");
                 }
-
                 mainLabel.style.display="none";                
                 document.getElementById('questions-sec').style.display = "block"
                 document.getElementsByClassName('main-label')[2].style.display = "block";
@@ -132,35 +155,10 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(level);
             console.log(easyLvlQuestions);      
         });
-
-
-
-
-
         
     }
     // hideAndShowSections(userNameLabel,difficultyPanel);
 });
-
-// function hideAndShowSections(userNameLabel,difficultyPanel){
-//     // userNameLabel.style.display = 'block';
-//     difficultyPanel.style.display = 'none';
-// }
-// window.onload = function(){
-//     document.getElementById('user-name-label').style.display = "block";
-//     document.getElementById('choose-difficulty-panel').style.display = "none";;
-// }
-// function setDifficulty(event){
-//     let level = event.value;
-//     if(level === "Easy"){
-//         alert("Easy");
-
-//     } else if(level === "Medium"){
-//         alert("Medium");
-//     }else{
-//         alert("Hard");
-//     }
-// }
 
 function startGame(gameDifficulty){
     if(gameDifficulty === "Easy"){
@@ -182,16 +180,18 @@ function setGameArea(gameQuestions){
     document.getElementById("questions-sec").children[0].innerText = randomGeneratedQuestions[0].question;
     let options = document.getElementById("options-list");
     // console.log(randomGeneratedQuestions[0].options[1]);
-    options.children[0].innerText = randomGeneratedQuestions[0].options[0];
-    options.children[1].innerText = randomGeneratedQuestions[0].options[1];
-    options.children[2].innerText = randomGeneratedQuestions[0].options[2];
-    options.children[3].innerText = randomGeneratedQuestions[0].options[3];
+    for(let i = 0 ; i <= 4 ; i++){
+        options.children[i].innerText = randomGeneratedQuestions[0].options[i];
+    }
+    // options.children[1].innerText = randomGeneratedQuestions[0].options[1];
+    // options.children[2].innerText = randomGeneratedQuestions[0].options[2];
+    // options.children[3].innerText = randomGeneratedQuestions[0].options[3];
 
     //Valid answer
     correctAnswer = randomGeneratedQuestions[0].correct;
 
     // removing questios that were asked
     easyLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
-    console.log(easyLvlQuestions);
+    console.log(easyLvlQuestions.length);
 
 }
