@@ -1,19 +1,23 @@
 const easyLvlQuestions = [
     {
+        id:1,
         question:"2+2?",
         options:[5,8,4,1],
         correct:4
     },{
+        id:2,
         question:"3+2?",
         options:[5,8,4,1],
         correct:5
     },
     {
+        id:3,
         question:"1+2?",
-        options:[5,2,4,1],
+        options:[3,2,4,1],
         correct:3
     },
     {
+        id:4,
         question:"4+2?",
         options:[5,6,4,1],
         correct:6
@@ -45,6 +49,11 @@ const hardLvlQuestions = [
         ]
     }
 ];
+let correctAnswer;
+let validAnswerCounter = 0;
+let invalidAnswerCounter = 0;
+let level;
+let isActive = false;
 document.addEventListener("DOMContentLoaded", function() {
     // userNameLabel.style.display = "block";
     // difficultyPanel.style.display = "none";
@@ -80,12 +89,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     difficultyPanel.style.display="block";
                     mainLabel.style.display="block";
                     document.getElementsByClassName("given-user-name")[0].innerText = userName;
-
+                    
                 }
-            }else if(this.id === "next-button"){
-                //load next set of questions
-                //calculate score to show in the end
-                alert("next button");
             } else {
                 alert("Something is broken");
                 throw("Something is broken");
@@ -96,13 +101,38 @@ document.addEventListener("DOMContentLoaded", function() {
        
         let difficultyList = document.getElementById("difficulty-list");
         difficultyList.addEventListener("click",function(event){
-                let level = event.target.innerText;
+                if (isActive === false) {
+                    level = event.target.innerText;
+                } else {
+                    level = localStorage.getItem("difficulty");
+                }
+
                 mainLabel.style.display="none";                
                 document.getElementById('questions-sec').style.display = "block"
                 document.getElementsByClassName('main-label')[2].style.display = "block";
                 document.getElementsByClassName("given-user-name")[1].innerHTML = localStorage.getItem("user-name");
-                startGame(level);              
+                localStorage.setItem("difficulty",level);
+                isActive = true;
+                startGame(level);         
         });
+        
+        let optionsList = document.getElementById("options-list");
+        optionsList.addEventListener("click",function(event){
+            // check correct answer
+            let answer = event.target.innerText;
+            if(correctAnswer === parseInt(answer)){
+                ++validAnswerCounter;
+                document.getElementById("correct-ans").innerText = validAnswerCounter;
+            }
+            else{
+                ++invalidAnswerCounter;
+                document.getElementById("incorrect-ans").innerText = invalidAnswerCounter;
+            }
+            difficultyList.click();
+            console.log(level);
+            console.log(easyLvlQuestions);      
+        });
+
 
 
 
@@ -148,7 +178,7 @@ function startGame(gameDifficulty){
 }
 function setGameArea(gameQuestions){
     // First shuffle questions
-    const randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
+    let randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
     document.getElementById("questions-sec").children[0].innerText = randomGeneratedQuestions[0].question;
     let options = document.getElementById("options-list");
     // console.log(randomGeneratedQuestions[0].options[1]);
@@ -156,4 +186,12 @@ function setGameArea(gameQuestions){
     options.children[1].innerText = randomGeneratedQuestions[0].options[1];
     options.children[2].innerText = randomGeneratedQuestions[0].options[2];
     options.children[3].innerText = randomGeneratedQuestions[0].options[3];
+
+    //Valid answer
+    correctAnswer = randomGeneratedQuestions[0].correct;
+
+    // removing questios that were asked
+    easyLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
+    console.log(easyLvlQuestions);
+
 }
