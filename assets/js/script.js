@@ -87,9 +87,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let difficultyPanel = document.getElementById('choose-difficulty-panel');
     userNameLabel.style.display='block';
     document.getElementById('questions-sec').style.display = "none"
+
     // difficultyPanel.style.display="block";
     mainLabel.style.display="none";
     document.getElementsByClassName('main-label')[2].style.display = "none";
+    // last panel
+    document.getElementsByClassName('main-label')[3].style.display = "none";
+
     let buttons = this.getElementsByTagName("button");
 
     // this.getElementById('choose-difficulty-panel').style.display = 'none'
@@ -153,12 +157,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("incorrect-ans").innerText = invalidAnswerCounter;
             }
             let totalQuestions = validAnswerCounter + invalidAnswerCounter
-            console.log("The total is"+totalQuestions)
-            if(totalQuestions <= 4){
+            console.log("The total is"+ totalQuestions)
+            if(totalQuestions <= 3){
                 difficultyList.click();
             }else{
                 // Main score
-                alert("The end");
+                // setTimeout(document.getElementsByClassName('main-label')[3].style.display = "block",500000);
+                setTimeout(() => {
+                    document.getElementsByClassName('main-label')[3].style.display = "block"
+                  }, 700);
             }
         });
         
