@@ -1,3 +1,42 @@
+const easyLvlQuestions = [
+    {
+        question:"This is question u know",
+        answers:[
+            {
+                text:"I am valid", correct:true,
+                text:"I am invalid",correct:false,
+                text:"I am invalid",correct:false,
+                text:"I am invalid",correct:false
+            }
+        ]
+    }
+];
+const mediumLvlQuestions = [
+    {
+        question:"This is question u know",
+        answers:[
+            {
+                text:"I am valid", correct:true,
+                text:"I am invalid",correct:false,
+                text:"I am invalid",correct:false,
+                text:"I am invalid",correct:false
+            }
+        ]
+    }
+];
+const hardLvlQuestions = [
+    {
+        question:"This is question u know",
+        answers:[
+            {
+                text:"I am valid", correct:true,
+                text:"I am invalid",correct:false,
+                text:"I am invalid",correct:false,
+                text:"I am invalid",correct:false
+            }
+        ]
+    }
+];
 document.addEventListener("DOMContentLoaded", function() {
     // userNameLabel.style.display = "block";
     // difficultyPanel.style.display = "none";
@@ -40,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 throw("Something is broken");
             }
             
-        })
+        });
         
        
-        let difficultyList = document.getElementById("u-list");
+        let difficultyList = document.getElementById("difficulty-list");
         difficultyList.addEventListener("click",function(event){
                 let level = event.target.innerText;
                 mainLabel.style.display="none";                
@@ -51,7 +90,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementsByClassName('main-label')[2].style.display = "block";
                 document.getElementsByClassName("given-user-name")[1].innerHTML = localStorage.getItem("user-name");
                 startGame(level);              
-            });
+        });
+
+
+
+
         
     }
     // hideAndShowSections(userNameLabel,difficultyPanel);
@@ -80,50 +123,18 @@ document.addEventListener("DOMContentLoaded", function() {
 function startGame(gameDifficulty){
     if(gameDifficulty === "Easy"){
         // easy question array
-        const easyQuestions = [
-            {
-                question:"This is question u know",
-                answers:[
-                    {
-                        text:"I am valid", correct:true,
-                        text:"I am invalid",correct:false,
-                        text:"I am invalid",correct:false,
-                        text:"I am invalid",correct:false
-                    }
-                ]
-            }
-        ];
+        setGameArea(easyLvlQuestions);      
     } else if(gameDifficulty === "Medium"){
         // Medium question array
-        const mediumQuestions = [
-            {
-                question:"This is question u know",
-                answers:[
-                    {
-                        text:"I am valid", correct:true,
-                        text:"I am invalid",correct:false,
-                        text:"I am invalid",correct:false,
-                        text:"I am invalid",correct:false
-                    }
-                ]
-            }
-        ];
+        setGameArea(mediumLvlQuestions);
     }else if(gameDifficulty === "Hard"){
         // Hard question array
-        const hardQuestions = [
-            {
-                question:"This is question u know",
-                answers:[
-                    {
-                        text:"I am valid", correct:true,
-                        text:"I am invalid",correct:false,
-                        text:"I am invalid",correct:false,
-                        text:"I am invalid",correct:false
-                    }
-                ]
-            }
-        ];
+        setGameArea(hardLvlQuestions);
     }else{
         alert("None");
     }
+}
+function setGameArea(gameQuestions){
+    document.getElementById("questions-sec").children[0].innerText = gameQuestions[0].question;
+    console.log(gameQuestions.question);
 }
