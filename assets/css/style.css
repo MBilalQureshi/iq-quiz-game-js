@@ -32,7 +32,7 @@ body{
     transform: translate(-50%, -50%);
     left: 50%;
     width: 50%;
-    height: 70%;
+    /* height: 70%; */
     text-align: center;
     border-radius: 0.8em;
 }
@@ -47,6 +47,7 @@ p, input,button,#no-user-name-msg {
     font-family: 'Oswald', sans-serif;  
     font-size: xx-large;
     font-weight: bold;
+    margin-top: 8px;
 }
 #no-user-name-msg{
     color: #ff0000;
@@ -59,6 +60,7 @@ input[type="text"]{
 
 #start-game-btn,#restart-page-btn{
     padding: 8px 8px 8px 8px;
+    margin-bottom: 28px;
 }
 
 #start-game-btn:hover,#restart-page-btn:hover{
@@ -107,5 +109,10 @@ li:hover{
 h2 {
     font-family: 'Oswald', sans-serif;
     font-size: xxx-large;
+    margin-top: 11%;
+}
+
+.fa-regular{
+    margin-right: 8px;
 }
 

@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
        
         let difficultyList = document.getElementById("difficulty-list");
         difficultyList.addEventListener("click",function(event){
-            // event.preventDefault();
+            //Set timer
             if (isActive === false) {
                 level = event.target.innerText;
             } else {
@@ -214,7 +214,7 @@ function setGameArea(gameQuestions,gameDifficulty){
 
     //Valid answer
     correctAnswer = randomGeneratedQuestions[0].correct;
-
+    setCountdown();
     console.log("The length is "+easyLvlQuestions.length);
 
     // removing questios that were asked
@@ -225,7 +225,7 @@ function setGameArea(gameQuestions,gameDifficulty){
     }else{
         hardLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
     }
-    
+    //set timer
     
 }
 
@@ -242,4 +242,20 @@ function averageOfCorrectAnswers(noOfValidAnswers){
     }else{
         return ["Invalid average value","Not found"]
     }
+}
+let timerId;
+function setCountdown(){
+    clearInterval(timerId)
+    let timeLimit = 30;
+    let timer = document.getElementById("timer");
+    timerId = setInterval(function(){
+        if (timeLimit == -1) {
+            clearTimeout(timerId);
+            // doSomething();
+          } else {
+            timer.innerHTML = timeLimit + "sec";
+            timeLimit--;
+          }
+    },1000);
+    
 }
