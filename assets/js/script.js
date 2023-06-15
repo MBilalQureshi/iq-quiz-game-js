@@ -167,6 +167,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }else{
                 // Main score
                 // setTimeout(document.getElementsByClassName('main-label')[3].style.display = "block",500000);
+                document.getElementsByClassName("given-user-name")[2].innerHTML = localStorage.getItem("user-name");
+                let average = averageOfCorrectAnswers(validAnswerCounter);
+                document.getElementById("calculated-iq").innerText = average[0];
+                document.getElementById("iq-status").innerText = average[1];
+                document.getElementById("total-score").innerText = validAnswerCounter;
+                // console.log(average);
                 setTimeout(() => {
                     document.getElementsByClassName('main-label')[3].style.display = "block"
                   }, 700);
@@ -221,4 +227,19 @@ function setGameArea(gameQuestions,gameDifficulty){
     }
     
     
+}
+
+function averageOfCorrectAnswers(noOfValidAnswers){
+    let average = (noOfValidAnswers / 4) * 100 ;  
+    if(average >=0 && average <= 25){
+        return[average,"Below average intelligence"];
+    }else if(average >= 25 && average <=50){
+        return[average,"Average IQ"];
+    }else if(average >= 50 && average <=75){
+        return[average,"Above average intelligence"];
+    }else if(average >= 75 && average <=100){
+        return[average,"Gifted"];
+    }else{
+        return ["Invalid average value","Not found"]
+    }
 }
