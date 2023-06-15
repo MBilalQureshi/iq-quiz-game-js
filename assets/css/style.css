@@ -84,13 +84,22 @@ li:hover{
     display: flex;
     align-items: center;
     padding: 4px 0px 0px 4px;
+    float: left;
+    margin-left: 8px;
 }
-.given-user-name{
-    margin-left: 4px;
+
+.timer-logo{
+    font-family: 'Oswald', sans-serif;  
+    font-size: x-large;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 4px 0px 0px 4px;
+    float: right;
+    margin-right: 8px;
 }
-#next-button{
-    margin-top: 8px;
-}
+
+
 #score > p{
     font-size: large;
 }
