@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // last panel
     document.getElementsByClassName('main-label')[3].style.display = "none";
 
-    let buttons = this.getElementsByTagName("button");
+    // let buttons = this.getElementsByTagName("button");
 
     // this.getElementById('choose-difficulty-panel').style.display = 'none'
-    for(let button of buttons){
-        button.addEventListener("click",function(){
+    // for(let button of buttons){
+        document.getElementById("start-game-btn").addEventListener("click",function(){
 
             if(this.id === "start-game-btn"){
                 let userName = document.getElementById("user-name").value;
@@ -126,22 +126,26 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             
         });
+        document.getElementById("restart-page-btn").addEventListener("click",function(){
+            window.location.reload(true);
+        });
         
        
         let difficultyList = document.getElementById("difficulty-list");
         difficultyList.addEventListener("click",function(event){
-                if (isActive === false) {
-                    level = event.target.innerText;
-                } else {
-                    level = localStorage.getItem("difficulty");
-                }
-                mainLabel.style.display="none";                
-                document.getElementById('questions-sec').style.display = "block"
-                document.getElementsByClassName('main-label')[2].style.display = "block";
-                document.getElementsByClassName("given-user-name")[1].innerHTML = localStorage.getItem("user-name");
-                localStorage.setItem("difficulty",level);
-                isActive = true;
-                startGame(level);         
+            // event.preventDefault();
+            if (isActive === false) {
+                level = event.target.innerText;
+            } else {
+                level = localStorage.getItem("difficulty");
+            }
+            mainLabel.style.display="none";                
+            document.getElementById('questions-sec').style.display = "block"
+            document.getElementsByClassName('main-label')[2].style.display = "block";
+            document.getElementsByClassName("given-user-name")[1].innerHTML = localStorage.getItem("user-name");
+            localStorage.setItem("difficulty",level);
+            isActive = true;
+            startGame(level);         
         });
         
         let optionsList = document.getElementById("options-list");
@@ -169,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
         
-    }
+    
     // hideAndShowSections(userNameLabel,difficultyPanel);
 });
 
@@ -206,6 +210,7 @@ function setGameArea(gameQuestions,gameDifficulty){
     correctAnswer = randomGeneratedQuestions[0].correct;
 
     console.log("The length is "+easyLvlQuestions.length);
+
     // removing questios that were asked
     if (gameDifficulty === "Easy") {
         easyLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
