@@ -57,10 +57,14 @@ input[type="text"]{
     margin-bottom: 10px;
 }
 
-#start-game-btn{
+#start-game-btn,#restart-page-btn{
     padding: 8px 8px 8px 8px;
 }
 
+#start-game-btn:hover,#restart-page-btn:hover{
+    color:#fff;
+    background-color: #000;
+}
 ul {
     font-family: 'Oswald', sans-serif;  
     list-style-type:none;
