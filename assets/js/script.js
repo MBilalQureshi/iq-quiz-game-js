@@ -266,7 +266,24 @@ document.addEventListener("DOMContentLoaded", function() {
                   }, 5000);          
             }
         });
+        // document.getElementsByTagName("li");
+        // document.getElementsByTagName("li").addEventListener("selectstart", () => {
+        //     return false;
+        //   });
         
+        document.onselectstart = () => {
+            return false;
+          };
+          document.onCopy = () => {
+            return false;
+          };
+          document.ondrag = () => {
+            return false;
+          };
+          
+        //   document.onmouseup = () => {
+        //     return false;
+        //   };
     
     // hideAndShowSections(userNameLabel,difficultyPanel);
 });
