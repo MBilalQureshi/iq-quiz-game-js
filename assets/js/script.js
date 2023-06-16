@@ -155,6 +155,7 @@ let isActive = false;
 let difficultyList = document.getElementById("difficulty-list");
 let optionsList = document.getElementById("options-list");
 let answer = "";
+let timerId;
 document.addEventListener("DOMContentLoaded", function() {
     // userNameLabel.style.display = "block";
     // difficultyPanel.style.display = "none";
@@ -241,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             let totalQuestions = validAnswerCounter + invalidAnswerCounter
             console.log("The total is"+ totalQuestions)
-            if(totalQuestions <= 3){
+            if(totalQuestions <= 7){
                 difficultyList.click();
             }else{
                 // Main score
@@ -253,8 +254,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("total-score").innerText = validAnswerCounter;
                 // console.log(average);
                 setTimeout(() => {
+                    document.getElementById('questions-sec').style.display = "none"
                     document.getElementsByClassName('main-label')[3].style.display = "block"
-                  }, 700);
+                  }, 1000);                 
             }
         });
         
@@ -322,7 +324,7 @@ function averageOfCorrectAnswers(noOfValidAnswers){
         return ["Invalid average value","Not found"]
     }
 }
-let timerId;
+
 function setCountdown(){
     clearInterval(timerId)
     let timeLimit = 30;
