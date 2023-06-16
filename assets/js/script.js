@@ -242,6 +242,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             let totalQuestions = validAnswerCounter + invalidAnswerCounter
             console.log("The total is"+ totalQuestions)
+
+
+
             if(totalQuestions <= 7){
                 difficultyList.click();
             }else{
@@ -252,11 +255,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("calculated-iq").innerText = average[0];
                 document.getElementById("iq-status").innerText = average[1];
                 document.getElementById("total-score").innerText = validAnswerCounter;
+                optionsList.style.pointerEvents = "none";
                 // console.log(average);
                 setTimeout(() => {
-                    document.getElementById('questions-sec').style.display = "none"
-                    document.getElementsByClassName('main-label')[3].style.display = "block"
-                  }, 1000);                 
+                    document.getElementById('questions-sec').style.display = "none";
+                    document.getElementsByClassName('main-label')[3].style.display = "block";
+                  }, 5000);          
             }
         });
         
