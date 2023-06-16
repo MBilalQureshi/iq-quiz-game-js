@@ -256,10 +256,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("iq-status").innerText = average[1];
                 document.getElementById("total-score").innerText = validAnswerCounter;
                 optionsList.style.pointerEvents = "none";
+                document.getElementById('load-result').style.display = "block";
+                // 
                 // console.log(average);
                 setTimeout(() => {
                     document.getElementById('questions-sec').style.display = "none";
                     document.getElementsByClassName('main-label')[3].style.display = "block";
+
                   }, 5000);          
             }
         });

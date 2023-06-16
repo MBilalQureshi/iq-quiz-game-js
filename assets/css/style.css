@@ -11,7 +11,7 @@ font-family: 'Roboto', sans-serif; */
 }
 
 body{
-    background: #000000 url("../images/background.webp") no-repeat center center;
+    background: #000000 url("../images/backgroundElephant.webp") no-repeat center center;
     background-size: cover;
     min-height: calc(100vh - 150px);
 }
@@ -114,5 +114,10 @@ h2 {
 
 .fa-regular{
     margin-right: 8px;
+}
+#load-result{
+    display: none;
+    background-color: #000;
+    color: #fff;
 }
 
