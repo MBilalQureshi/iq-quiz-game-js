@@ -157,24 +157,18 @@ let optionsList = document.getElementById("options-list");
 let answer = "";
 let timerId;
 document.addEventListener("DOMContentLoaded", function() {
-    // userNameLabel.style.display = "block";
-    // difficultyPanel.style.display = "none";
+
     let userNameLabel = document.getElementById('user-name-label');
     let mainLabel = document.getElementsByClassName('main-label')[1];
     let difficultyPanel = document.getElementById('choose-difficulty-panel');
     userNameLabel.style.display='block';
     document.getElementById('questions-sec').style.display = "none"
 
-    // difficultyPanel.style.display="block";
     mainLabel.style.display="none";
     document.getElementsByClassName('main-label')[2].style.display = "none";
     // last panel
     document.getElementsByClassName('main-label')[3].style.display = "none";
 
-    // let buttons = this.getElementsByTagName("button");
-
-    // this.getElementById('choose-difficulty-panel').style.display = 'none'
-    // for(let button of buttons){
         document.getElementById("start-game-btn").addEventListener("click",function(){
 
             if(this.id === "start-game-btn"){
@@ -183,14 +177,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(userName === ""){
                     document.getElementById("no-user-name-msg").innerText = "Kindly provide a user name";
                 }else{
-                    // userNameLabel.setAttribute('style','display:none;')
-                    // difficultyPanel.setAttribute('style','display:block;')
-                    // mainLabel.setAttribute('style','display:block')
-                    // userNameLabel.style.visibility="hidden";
-                    // difficultyPanel.style.display="block";
-                    // game start - choose dificulty panel
-                    // userNameLabel.remove();
-                    // difficultyPanel.style.visibility="visible";
                     userNameLabel.style.display='none';
                     difficultyPanel.style.display="block";
                     mainLabel.style.display="block";
@@ -207,9 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.reload(true);
         });
         
-       
-        // let difficultyList = document.getElementById("difficulty-list");
-        difficultyList.addEventListener("click",function(event){
+               difficultyList.addEventListener("click",function(event){
             //Set timer
             if (isActive === false) {
                 level = event.target.innerText;
@@ -225,7 +209,6 @@ document.addEventListener("DOMContentLoaded", function() {
             startGame(level);         
         });
         
-        // let optionsList = document.getElementById("options-list");
         optionsList.addEventListener("click",function(event){
             // check correct answer
             answer = event.target.innerText;
@@ -249,7 +232,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 difficultyList.click();
             }else{
                 // Main score
-                // setTimeout(document.getElementsByClassName('main-label')[3].style.display = "block",500000);
                 document.getElementsByClassName("given-user-name")[2].innerHTML = localStorage.getItem("user-name");
                 let average = averageOfCorrectAnswers(validAnswerCounter);
                 document.getElementById("calculated-iq").innerText = average[0];
@@ -257,8 +239,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("total-score").innerText = validAnswerCounter;
                 optionsList.style.pointerEvents = "none";
                 document.getElementById('load-result').style.display = "block";
-                // 
-                // console.log(average);
+  
                 setTimeout(() => {
                     document.getElementById('questions-sec').style.display = "none";
                     document.getElementsByClassName('main-label')[3].style.display = "block";
@@ -266,26 +247,18 @@ document.addEventListener("DOMContentLoaded", function() {
                   }, 5000);          
             }
         });
-        // document.getElementsByTagName("li");
-        // document.getElementsByTagName("li").addEventListener("selectstart", () => {
-        //     return false;
-        //   });
-        
+
+        //Fix multiple selection on clickable list
         document.onselectstart = () => {
             return false;
           };
-          document.onCopy = () => {
+        document.onCopy = () => {
             return false;
-          };
-          document.ondrag = () => {
+        };
+        document.ondrag = () => {
             return false;
-          };
+        };
           
-        //   document.onmouseup = () => {
-        //     return false;
-        //   };
-    
-    // hideAndShowSections(userNameLabel,difficultyPanel);
 });
 
 function startGame(gameDifficulty){
@@ -307,11 +280,7 @@ function setGameArea(gameQuestions,gameDifficulty){
     let randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
     document.getElementById("questions-sec").children[0].innerText = randomGeneratedQuestions[0].question;
     let options = document.getElementById("options-list");
-    // console.log(randomGeneratedQuestions[0].options[1]);
-    // for(let i = 0 ; i <= 4 ; i++){
-    //     options.children[i].innerText = randomGeneratedQuestions[0].options[i];
-    //     console.log(i);
-    // }
+
     options.children[0].innerText = randomGeneratedQuestions[0].options[0];
     options.children[1].innerText = randomGeneratedQuestions[0].options[1];
     options.children[2].innerText = randomGeneratedQuestions[0].options[2];
@@ -366,6 +335,5 @@ function setCountdown(gameDifficulty){
             timer.innerHTML = timeLimit + "sec";
             timeLimit--;
           }
-    },1000);
-    
+    },1000);  
 }
