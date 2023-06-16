@@ -101,7 +101,7 @@ const mediumLvlQuestions = [
 const hardLvlQuestions = [
     {
         id:1,
-        question:"What is the fourth sequence in the following:1.BRRRRRBB,2.RBRBRRBR,3...",
+        question:"What is the fourth sequence in the following:1.BRRRRRBB, 2.RBRBRRBR ,3...",
         options:["RBBBRRRR","RBBBRRRR","BRRBRBRR","BRRRRRBB"],
         correct:"BRRRRRBB"
     },
@@ -295,7 +295,7 @@ function setGameArea(gameQuestions,gameDifficulty){
 
     //Valid answer
     correctAnswer = randomGeneratedQuestions[0].correct;
-    setCountdown();
+    setCountdown(gameDifficulty);
     console.log("The length is "+easyLvlQuestions.length);
 
     // removing questios that were asked
@@ -311,7 +311,7 @@ function setGameArea(gameQuestions,gameDifficulty){
 }
 
 function averageOfCorrectAnswers(noOfValidAnswers){
-    let average = (noOfValidAnswers / 4) * 100 ;  
+    let average = (noOfValidAnswers / 8) * 100 ;  
     if(average >=0 && average <= 25){
         return[average,"Below average intelligence"];
     }else if(average >= 25 && average <=50){
@@ -325,9 +325,14 @@ function averageOfCorrectAnswers(noOfValidAnswers){
     }
 }
 
-function setCountdown(){
+function setCountdown(gameDifficulty){
     clearInterval(timerId)
-    let timeLimit = 30;
+    let timeLimit;
+    if (gameDifficulty === 'Hard'){
+        timeLimit = 120;
+    }else{
+        timeLimit = 30;
+    }
     let timer = document.getElementById("timer");
     timerId = setInterval(function(){
         if (timeLimit == -1) {
