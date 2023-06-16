@@ -1,77 +1,150 @@
 const easyLvlQuestions = [
     {
         id:1,
-        question:"2+2?",
-        options:[5,8,4,1],
-        correct:4
+        question:"How many continents are there on Earth?",
+        options:["Seven","Nine","Two","One"],
+        correct:"Seven"
     },
     {
         id:2,
-        question:"3+2?",
-        options:[5,8,4,1],
-        correct:5
+        question:"What year was NASA founded?",
+        options:["2009","1948","1960","1958"],
+        correct:"1958"
     },
     {
         id:3,
-        question:"1+2?",
-        options:[3,2,4,1],
-        correct:3
+        question:"Who was the first man on the moon?",
+        options:["Muhammad Ali","George Washington","Abdul Qadeer Khan","Neil Armstrong"],
+        correct:"Neil Armstrong"
     },
     {
         id:4,
-        question:"4+2?",
-        options:[5,6,4,1],
-        correct:6
+        question:"Who is the father of mathematics?",
+        options:["Mike Tyson","Pythagoras","Galileo Galilei","Ezio Auditore"],
+        correct:"Pythagoras"
+    },
+    {
+        id:5,
+        question:"How many men does it take to dig half a hole?",
+        options:["0, you cant dig half a hole","two","Ten","Not enough info"],
+        correct:"0, you cant dig half a hole"
+    },
+    {
+        id:6,
+        question:"Spinach is high in:",
+        options:["Biotin","Vitamin E","Vitamin C","Iron"],
+        correct:"Iron"
+    },
+    {
+        id:7,
+        question:"How many months in a year have 28 days?",
+        options:["9","1","None","Dosent't exist"],
+        correct:"1"
+    },
+    {
+        id:8,
+        question:"Which among the following produces honey?",
+        options:["Bee","Ant","Wasp","Dinosaurs"],
+        correct:"Bee"
     }
+    
 ];
 const mediumLvlQuestions = [
     {
         id:1,
-        question:"2+2?",
-        options:[5,8,4,1],
-        correct:4
-    },{
+        question:"Which number should be there next in this series? 25, 24, 22, 19, 15",
+        options:["10","9","13","7"],
+        correct:"10"
+    },
+    {
         id:2,
-        question:"3+2?",
-        options:[5,8,4,1],
-        correct:5
+        question:"Which one of the five is least like the other four?",
+        options:["Lion","Turtle","Snake","Cow"],
+        correct:"Snake"
     },
     {
         id:3,
-        question:"1+2?",
-        options:[3,2,4,1],
-        correct:3
+        question:"If you rearrange the letters 'BARBIT,' you would have the name of a:",
+        options:["State","Animal","Ocean","Planet"],
+        correct:"Animal"
     },
     {
         id:4,
-        question:"4+2?",
-        options:[5,6,4,1],
-        correct:6
+        question:"Which one of the five is least like the other four?",
+        options:["Potato","carrot","Beans","Apple"],
+        correct:"Apple"
+    },
+    {
+        id:5,
+        question:"Nia, twelve years old, is three times as old as her sister. How old will Nia be when she is twice as old as her sister?",
+        options:["12","15","16","18"],
+        correct:"16"
+    },{
+        id:6,
+        question:"Which one of the five makes the best comparison? Brother is to sister as niece is to:",
+        options:["Daughter","Mother","Aunt","Nephew"],
+        correct:"Nephew"
+    },
+    {
+        id:7,
+        question:"Which one of the four letters is least like the other three?",
+        options:["E","N","Z","K"],
+        correct:"E"
+    },
+    {
+        id:8,
+        question:"Which one of the five makes the best comparison? Milk is to glass as the letter is to:",
+        options:["Stamp","Mail","Envelope","Book"],
+        correct:"Envelope"
     }
 ];
 const hardLvlQuestions = [
     {
         id:1,
-        question:"2+2?",
-        options:[5,8,4,1],
-        correct:4
-    },{
+        question:"What is the fourth sequence in the following:1.BRRRRRBB,2.RBRBRRBR,3...",
+        options:["RBBBRRRR","RBBBRRRR","BRRBRBRR","BRRRRRBB"],
+        correct:"BRRRRRBB"
+    },
+    {
         id:2,
-        question:"3+2?",
-        options:[5,8,4,1],
-        correct:5
+        question:"3,54,204,461,833,1328,1954,?",
+        options:["1234","2719","2323","3421"],
+        correct:"2719"
     },
     {
         id:3,
-        question:"1+2?",
-        options:[3,2,4,1],
-        correct:3
+        question:"If no toogs are fibs, some hins are budis, all hins are gups, all gups are fibs, and some rojems are toogs, then its possible that some rojems are budis?",
+        options:["Invalid","True","False","32.2"],
+        correct:"True"
     },
     {
         id:4,
-        question:"4+2?",
-        options:[5,6,4,1],
-        correct:6
+        question:"How many vowels appear in this question?",
+        options:["12","13","14","15"],
+        correct:"13"
+    },
+    {
+        id:5,
+        question:"-g-t-y- -y-g-t- -t-y-g-   -h-u-z- -z-h-u- -u-z-h- What will the 3 values of the next grid be?",
+        options:["I-w-z","d-g-d","t-v-r","I-v-a"],
+        correct:"I-v-a"
+    },{
+        id:6,
+        question:"If all tugs are fugs, and all fugs are yoms, then all tugs are yoms?",
+        options:["Invalid","True","False","toms"],
+        correct:"True"
+    },
+    {
+        id:7,
+        question:"2, 6, 1, 3, 0.5, 1.5, ? What is the missing number?",
+        options:["1.75","0.55","0.25","0.75"],
+        correct:"0.25"
+    },
+    {
+        id:8,
+        question:"Are there more odd or square numbers in the following list? 2, 3, 4, 12, 16, 25, 29, 36, 48, 49, 72, 81, 90, 101, 125, 139?",
+        options:["Square numbers by 1 more.","Odd numbers by 1 more.","Square numbers by 3 more.","All are the same amount."],
+        correct:"Square numbers by 1 more."
     }
 ];
 let correctAnswer;
@@ -79,6 +152,9 @@ let validAnswerCounter = 0;
 let invalidAnswerCounter = 0;
 let level;
 let isActive = false;
+let difficultyList = document.getElementById("difficulty-list");
+let optionsList = document.getElementById("options-list");
+let answer = "";
 document.addEventListener("DOMContentLoaded", function() {
     // userNameLabel.style.display = "block";
     // difficultyPanel.style.display = "none";
@@ -131,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         
        
-        let difficultyList = document.getElementById("difficulty-list");
+        // let difficultyList = document.getElementById("difficulty-list");
         difficultyList.addEventListener("click",function(event){
             //Set timer
             if (isActive === false) {
@@ -148,15 +224,18 @@ document.addEventListener("DOMContentLoaded", function() {
             startGame(level);         
         });
         
-        let optionsList = document.getElementById("options-list");
+        // let optionsList = document.getElementById("options-list");
         optionsList.addEventListener("click",function(event){
             // check correct answer
-            let answer = event.target.innerText;
-            if(correctAnswer === parseInt(answer)){
+            answer = event.target.innerText;
+            if(correctAnswer === answer){
                 ++validAnswerCounter;
                 document.getElementById("correct-ans").innerText = validAnswerCounter;
             }
-            else{
+            else if(answer === ""){
+                ++invalidAnswerCounter;
+                document.getElementById("incorrect-ans").innerText = invalidAnswerCounter;
+            }else{
                 ++invalidAnswerCounter;
                 document.getElementById("incorrect-ans").innerText = invalidAnswerCounter;
             }
@@ -251,7 +330,7 @@ function setCountdown(){
     timerId = setInterval(function(){
         if (timeLimit == -1) {
             clearTimeout(timerId);
-            // doSomething();
+            optionsList.click();           
           } else {
             timer.innerHTML = timeLimit + "sec";
             timeLimit--;
