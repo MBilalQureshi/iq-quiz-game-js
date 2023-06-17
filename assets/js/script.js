@@ -58,7 +58,7 @@ const mediumLvlQuestions = [
     },
     {
         id:2,
-        question:"Which one of the five is least like the other four?",
+        question:"Which one of the four is least like the other four?",
         options:["Lion","Turtle","Snake","Cow"],
         correct:"Snake"
     },
@@ -70,7 +70,7 @@ const mediumLvlQuestions = [
     },
     {
         id:4,
-        question:"Which one of the five is least like the other four?",
+        question:"Which one of the four is least like the other four?",
         options:["Potato","carrot","Beans","Apple"],
         correct:"Apple"
     },
@@ -81,7 +81,7 @@ const mediumLvlQuestions = [
         correct:"16"
     },{
         id:6,
-        question:"Which one of the five makes the best comparison? Brother is to sister as niece is to:",
+        question:"Which one of the four makes the best comparison? Brother is to sister as niece is to:",
         options:["Daughter","Mother","Aunt","Nephew"],
         correct:"Nephew"
     },
@@ -93,7 +93,7 @@ const mediumLvlQuestions = [
     },
     {
         id:8,
-        question:"Which one of the five makes the best comparison? Milk is to glass as the letter is to:",
+        question:"Which one of the four makes the best comparison? Milk is to glass as the letter is to:",
         options:["Stamp","Mail","Envelope","Book"],
         correct:"Envelope"
     }
@@ -102,7 +102,7 @@ const hardLvlQuestions = [
     {
         id:1,
         question:"What is the fourth sequence in the following:1.BRRRRRBB, 2.RBRBRRBR ,3...",
-        options:["RBBBRRRR","RBBBRRRR","BRRBRBRR","BRRRRRBB"],
+        options:["RBABRRRR","RBBBRRRR","BRRBRBRR","BRRRRRBB"],
         correct:"BRRRRRBB"
     },
     {
