@@ -190,7 +190,11 @@ document.addEventListener("DOMContentLoaded", function() {
             
         });
         document.getElementById("restart-page-btn").addEventListener("click",function(){
-            window.location.reload(true);
+            document.getElementsByClassName("main-label")[3].style.display = "none";
+            document.getElementsByClassName("main-label")[2].style.display = "none";
+            document.getElementsByClassName("main-label")[1].style.display = "none";
+            // window.location.reload(true);
+            history.go();
         });
         
                difficultyList.addEventListener("click",function(event){
