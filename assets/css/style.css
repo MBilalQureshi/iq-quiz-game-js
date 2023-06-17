@@ -10,10 +10,12 @@ font-family: 'Roboto', sans-serif; */
 	border: none;
 }
 
-body{
+#body-inner{
     background: #000000 url("../images/backgroundElephant.webp") no-repeat center center;
     background-size: cover;
-    min-height: calc(100vh - 150px);
+    width : 100vw;
+    height: 100vh;
+    /* min-height: calc(100vh - 150px); */
 }
 
 #logo{
@@ -27,7 +29,7 @@ body{
 
 .main-label{
     background-color: #fff;
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -35,12 +37,18 @@ body{
     /* height: 70%; */
     text-align: center;
     border-radius: 0.8em;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #user-name-label, #choose-difficulty-panel,#questions-sec{
     padding: 16px 16px 16px 16px;
-    margin-top: 5%;
+    /* margin-top: 5%; */
     line-height: 60px;
+    /*  */
+    clear: both;
 }
 
 p, input,button,#no-user-name-msg { 
@@ -56,6 +64,8 @@ input[type="text"]{
     border: 2px solid #000;
     padding: 4px 4px 4px 8px;
     margin-bottom: 10px;
+    /* width: -webkit-fill-available;
+    font-size: 1.3em; */
 }
 
 #start-game-btn,#restart-page-btn{
@@ -83,11 +93,12 @@ li:hover{
     font-family: 'Oswald', sans-serif;  
     font-size: x-large;
     font-weight: bold;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     padding: 4px 0px 0px 4px;
     float: left;
     margin-left: 8px;
+    width: fit-content;
 }
 
 .timer-logo{
@@ -109,15 +120,74 @@ li:hover{
 h2 {
     font-family: 'Oswald', sans-serif;
     font-size: xxx-large;
-    margin-top: 11%;
+    /* margin-top: 11%; */
 }
 
 .fa-regular{
     margin-right: 8px;
+}
+#result{
+    clear: both;
 }
 #load-result{
     display: none;
     background-color: #000;
     color: #fff;
 }
+
+/* Media Quries */
+/* @media screen and (max-width: 1285px) {
+    #body-inner{
+        min-height: calc(120vh - 150px);
+    }
+} */
+
+/* For large Tablets */
+@media screen and (max-width: 1250px) {
+
+    .main-label{
+        width: 70%;
+    }
+}
+
+/* For large to medium Tablets */
+@media screen and (max-width: 950px) {
+    /* #body-inner{
+        min-height: calc(130vh - 150px);
+    } */
+    .main-label{
+        width: 70%;
+        /* top:60%; */
+    }
+}
+/* For Medium size Tablets */
+@media screen and (max-width: 700px) {
+    .main-label{
+        width: 90%;
+        transform: translate(-50%, -50%);
+        /* top:60%; */
+    }
+}
+
+/* For Small Tablets */
+@media screen and (max-width: 500px) {
+    #body-inner{
+        min-height: calc(140vh - 150px);
+    }
+    .main-label{
+        width: 80%;
+        top:60%;
+    }
+
+    input[type="text"]{
+        width: -webkit-fill-available;
+        font-size: 1.3em;
+    }
+}
+
+
+
+
+
+
 

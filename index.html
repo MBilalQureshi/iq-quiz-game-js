@@ -12,7 +12,7 @@
     <header>
         <h1 id = "logo"><i class="fa-sharp fa-solid fa-brain"></i>IQ Quiz Game</h1>
     </header>
-
+<div id="body-inner">
     <!-- Enter User Name -->
     <section class="main-label">
        <div id = "user-name-label"> 
@@ -68,7 +68,7 @@
         <div class="user-logo-name">
             <i class="fa-regular fa-user"></i><span class="given-user-name"></span>
         </div>
-        <div>
+        <div id="result">
             <h2>Results are here</h2>
             <p>Based on the calculations average of your IQ is: <span id="calculated-iq"></span></p><br>
             <p>Status of your IQ is: <span id="iq-status"></span></p><br>
@@ -76,6 +76,8 @@
             <button type="button" id="restart-page-btn">Restart Game</button>
         </div>
     </section>
+    
+</div>
     <script src="./assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/829eda7611.js" crossorigin="anonymous"></script>
 </body>
