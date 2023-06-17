@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 setTimeout(() => {
                     document.getElementById('questions-sec').style.display = "none";
                     document.getElementsByClassName('main-label')[3].style.display = "block";
+                    document.getElementsByClassName("user-logo-name")[2].style.float = "none";
                   }, 5000);          
             }
         });
