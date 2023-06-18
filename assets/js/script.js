@@ -178,109 +178,108 @@ let setCalculatedIq = document.getElementById("calculated-iq");
 let setIqStatus = document.getElementById("iq-status");
 let setTotalScore = document.getElementById("total-score");
 let loadResult = document.getElementById('load-result');
+let options = document.getElementById("options-list");
+let getUserName = document.getElementById("user-name");
 
 document.addEventListener("DOMContentLoaded", function() {
-
     userNameLabel.style.display='block';
     questionSection.style.display = "none"
     mainLabelOne.style.display="none";
     mainLabelTwo.style.display = "none";
     mainLabelThree.style.display = "none";
 
-        startGameButton.addEventListener("click",function(){
-
-            if(this.id === "start-game-btn"){
-                let userName = document.getElementById("user-name").value;
-                localStorage.setItem("user-name",userName);
-                if(userName === ""){
-                    noUserNameMessage.innerText = "Kindly provide a user name";
-                }else{
-                    userNameLabel.style.display='none';
-                    difficultyPanel.style.display="block";
-                    mainLabelOne.style.display="block";
-                    givenUserNameOne.innerText = userName;
-                    
-                }
-            } else {
-                alert("Something is broken");
-                throw("Something is broken");
-            }
-            
-        });
-        
-        restartGameButton.addEventListener("click",function(){
-            mainLabelOne.style.display = "none";
-            window.location.reload(true);
-            // history.go();
-        });
-        
-            difficultyList.addEventListener("click",function(event){
-            //Set timer
-            if (isActive === false) {
-                level = event.target.innerText;
-            } else {
-                level = localStorage.getItem("difficulty");
-            }
-            mainLabelOne.style.display="none";                
-            questionSection.style.display = "block"
-            mainLabelTwo.style.display = "block";
-            givenUserNameTwo.innerHTML = localStorage.getItem("user-name");
-            localStorage.setItem("difficulty",level);
-            isActive = true;
-            startGame(level);         
-        });
-        
-        optionsList.addEventListener("click",function(event){
-            // check correct answer
-            answer = event.target.innerText;
-            if(correctAnswer === answer){
-                ++validAnswerCounter;
-                setCorrectAnswer.innerText = validAnswerCounter;
-            }
-            else if(answer === ""){
-                ++invalidAnswerCounter;
-                setInCorrectAnswer.innerText = invalidAnswerCounter;
-            }else{
-                ++invalidAnswerCounter;
-                setInCorrectAnswer.innerText = invalidAnswerCounter;
-            }
-            let totalQuestions = validAnswerCounter + invalidAnswerCounter
-            console.log("The total is"+ totalQuestions)
-
-
-
-            if(totalQuestions <= 7){
-                difficultyList.click();
-            }else{
-                // Main score
-                givenUserNameThree.innerHTML = localStorage.getItem("user-name");
-                let average = averageOfCorrectAnswers(validAnswerCounter);
-                setCalculatedIq.innerText = average[0];
-                setIqStatus.innerText = average[1];
-                setTotalScore.innerText = validAnswerCounter;
-                optionsList.style.pointerEvents = "none";
-                loadResult.style.display = "block";
-                clearInterval(timerId);
-                setTimeout(() => {
-                    questionSection.style.display = "none";
-                    mainLabelThree.style.display = "block";
-                    // document.getElementsByClassName("user-logo-name")[2].style.float = "none";
-                  }, 5000);          
-            }
-        });
-
-        //Fix multiple selection on clickable list
-        document.onselectstart = () => {
-            return false;
-          };
-        document.onCopy = () => {
-            return false;
-        };
-        document.ondrag = () => {
-            return false;
-        };
-          
+    startGameButton.addEventListener("click",checkUserName);
+    restartGameButton.addEventListener("click",restartGame);
+    difficultyList.addEventListener("click",checkDifficulty);
+    optionsList.addEventListener("click",checkSolutionAndCalculateResult);
+    preventMultipleSelectionOfList();
 });
+
+//Fix multiple selection on clickable list
+function preventMultipleSelectionOfList(){
+    document.onselectstart = () => {
+        return false;
+    };
+    document.onCopy = () => {
+        return false;
+    };
+    document.ondrag = () => {
+        return false;
+    };
+}
+function checkDifficulty(event){
+    if (isActive === false) {
+        level = event.target.innerText;
+    } else {
+        level = localStorage.getItem("difficulty");
+    }
+    mainLabelOne.style.display="none";
+    questionSection.style.display = "block"
+    mainLabelTwo.style.display = "block";
+    givenUserNameTwo.innerHTML = localStorage.getItem("user-name");
+    localStorage.setItem("difficulty",level);
+    isActive = true;
+    startGame(level); 
+}
+
+function checkUserName (){
+    if(this.id === "start-game-btn"){
+        let userName = getUserName.value;
+        localStorage.setItem("user-name",userName);
+        if(userName === ""){
+            noUserNameMessage.innerText = "Kindly provide a user name";
+        } else {
+            userNameLabel.style.display='none';
+            difficultyPanel.style.display="block";
+            mainLabelOne.style.display="block";
+            givenUserNameOne.innerText = userName;               
+        }
+    } else {
+        alert("Invalid Username");
+        throw("Username is invalid");
+    }
+}
+
+function checkSolutionAndCalculateResult(event){
+    answer = event.target.innerText;
+        if(correctAnswer === answer){
+            ++validAnswerCounter;
+            setCorrectAnswer.innerText = validAnswerCounter;
+        }
+        else if(answer === ""){
+            ++invalidAnswerCounter;
+            setInCorrectAnswer.innerText = invalidAnswerCounter;
+        }else{
+            ++invalidAnswerCounter;
+            setInCorrectAnswer.innerText = invalidAnswerCounter;
+        }
+        let totalQuestions = validAnswerCounter + invalidAnswerCounter
+
+
+
+        if(totalQuestions <= 7){
+            difficultyList.click();
+        }else{
+            // Main score
+            givenUserNameThree.innerHTML = localStorage.getItem("user-name");
+            let average = averageOfCorrectAnswers(validAnswerCounter);
+            setCalculatedIq.innerText = average[0];
+            setIqStatus.innerText = average[1];
+            setTotalScore.innerText = validAnswerCounter;
+            optionsList.style.pointerEvents = "none";
+            loadResult.style.display = "block";
+            clearInterval(timerId);
+            setTimeout(() => {
+                questionSection.style.display = "none";
+                mainLabelThree.style.display = "block";
+                // document.getElementsByClassName("user-logo-name")[2].style.float = "none";
+                }, 5000);          
+        }
+}
+function restartGame(){
+    mainLabelOne.style.display = "none";
+    window.location.reload(true);
+}
 
 function startGame(gameDifficulty){
     if(gameDifficulty === "Easy"){
@@ -300,7 +299,7 @@ function setGameArea(gameQuestions,gameDifficulty){
     // First shuffle questions
     let randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
     questionSection.children[0].innerText = randomGeneratedQuestions[0].question;
-    let options = document.getElementById("options-list");
+    
 
     options.children[0].innerText = randomGeneratedQuestions[0].options[0];
     options.children[1].innerText = randomGeneratedQuestions[0].options[1];
@@ -310,7 +309,6 @@ function setGameArea(gameQuestions,gameDifficulty){
     //Valid answer
     correctAnswer = randomGeneratedQuestions[0].correct;
     setCountdown(gameDifficulty);
-    console.log("The length is "+easyLvlQuestions.length);
 
     // removing questios that were asked
     if (gameDifficulty === "Easy") {
