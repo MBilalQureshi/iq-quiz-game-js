@@ -157,6 +157,10 @@ h2 {
     /* #body-inner{
         min-height: calc(130vh - 150px);
     } */
+    #body-inner{
+        /* calc(140vh - 150px) */
+        min-height: auto;
+    }
     .main-label{
         width: 70%;
         /* top:60%; */
@@ -164,6 +168,10 @@ h2 {
 }
 /* For Medium size Tablets */
 @media screen and (max-width: 700px) {
+    #body-inner{
+        /* calc(140vh - 150px) */
+        min-height: auto;
+    }
     .main-label{
         width: 90%;
         transform: translate(-50%, -50%);
@@ -231,6 +239,28 @@ h2 {
         font-size: xx-large;
     }
 }
+/* For much smaller mobile screens */
+@media screen and (max-width: 350px) {
+    #logo{
+        font-size: xx-large;
+    }
+    .main-label{
+        width: 95%;
+        top: 50%;
+    }
+
+    p, input,button,#no-user-name-msg,li { 
+        font-size: large;
+        line-height: 40px;
+
+    }
+    h2{
+        font-size: x-large;
+    }
+
+}
+
+
 
 
 
