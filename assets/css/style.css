@@ -55,6 +55,9 @@ p, input,button,#no-user-name-msg {
     font-weight: bold;
     margin-top: 8px;
 }
+#choose-difficulty-panel > p{
+    margin-top: 20px;
+}
 #no-user-name-msg{
     color: #ff0000;
 }
