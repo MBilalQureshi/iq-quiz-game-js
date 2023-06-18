@@ -174,7 +174,8 @@ h2 {
 /* For Small Tablets */
 @media screen and (max-width: 500px) {
     #body-inner{
-        min-height: calc(140vh - 150px);
+        /* calc(140vh - 150px) */
+        min-height: auto;
     }
     .main-label{
         width: 80%;
@@ -188,6 +189,27 @@ h2 {
 }
 
 /* For Mobile phones */
+@media screen and (max-width: 455px) {
+    #body-inner{
+        min-height: auto;
+        /* height: 90vh; */
+    }
+
+    .main-label{
+        transform: translate(-50%, -50%);
+        width: 90%;
+        top: 50%;
+    }
+   
+    p, input,button,#no-user-name-msg { 
+        font-size: x-large;
+        line-height: 40px;
+
+    }
+    h2{
+        font-size: xx-large;
+    }
+}
 @media screen and (max-width: 455px) {
     #body-inner{
         min-height: auto;
