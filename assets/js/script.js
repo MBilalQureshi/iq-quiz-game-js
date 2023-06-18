@@ -190,9 +190,11 @@ document.addEventListener("DOMContentLoaded", function() {
             
         });
         document.getElementById("restart-page-btn").addEventListener("click",function(){
-            // document.getElementsByClassName("main-label")[3].style.display = "none";
-            // document.getElementsByClassName("main-label")[2].style.display = "none";
-            // document.getElementsByClassName("main-label")[1].style.display = "none";
+        // for(let i = 0;i<=3;i++){
+        //     document.getElementsByClassName('main-label')[i].style.display = "none";
+        // }
+        // document.body.style.display = "none";
+        document.getElementsByClassName('main-label')[1].style.display = "none";
             window.location.reload(true);
             // history.go();
         });
@@ -243,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("total-score").innerText = validAnswerCounter;
                 optionsList.style.pointerEvents = "none";
                 document.getElementById('load-result').style.display = "block";
-  
+                clearInterval(timerId);
                 setTimeout(() => {
                     document.getElementById('questions-sec').style.display = "none";
                     document.getElementsByClassName('main-label')[3].style.display = "block";
