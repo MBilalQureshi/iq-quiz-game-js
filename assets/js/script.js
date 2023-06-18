@@ -195,18 +195,30 @@ document.addEventListener("DOMContentLoaded", function() {
     preventMultipleSelectionOfList();
 });
 
-//Fix multiple selection on clickable list
+/**
+ * During game when questions being asked
+ * this function prevents multiple selection
+ * of answers.
+ */
 function preventMultipleSelectionOfList(){
     document.onselectstart = () => {
         return false;
     };
-    document.onCopy = () => {
+    document.oncopy = () => {
         return false;
     };
     document.ondrag = () => {
         return false;
     };
+
 }
+
+/**
+ * This function checks the selected difficulty, sets the
+ * user name on screen and starts the game by calling another
+ * function which takes a perameter of selected difficulty.
+ * @param {*} event 
+ */
 function checkDifficulty(event){
     if (isActive === false) {
         level = event.target.innerText;
@@ -255,8 +267,6 @@ function checkSolutionAndCalculateResult(event){
         }
         let totalQuestions = validAnswerCounter + invalidAnswerCounter
 
-
-
         if(totalQuestions <= 7){
             difficultyList.click();
         }else{
@@ -272,7 +282,6 @@ function checkSolutionAndCalculateResult(event){
             setTimeout(() => {
                 questionSection.style.display = "none";
                 mainLabelThree.style.display = "block";
-                // document.getElementsByClassName("user-logo-name")[2].style.float = "none";
                 }, 5000);          
         }
 }
@@ -281,6 +290,10 @@ function restartGame(){
     window.location.reload(true);
 }
 
+/**
+ * 
+ * @param {*} gameDifficulty 
+ */
 function startGame(gameDifficulty){
     if(gameDifficulty === "Easy"){
         // easy question array
@@ -295,6 +308,7 @@ function startGame(gameDifficulty){
         alert("None");
     }
 }
+
 function setGameArea(gameQuestions,gameDifficulty){
     // First shuffle questions
     let randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
