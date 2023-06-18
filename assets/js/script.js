@@ -147,40 +147,58 @@ const hardLvlQuestions = [
         correct:"Square numbers by 1 more."
     }
 ];
+
+
 let correctAnswer;
 let validAnswerCounter = 0;
 let invalidAnswerCounter = 0;
 let level;
 let isActive = false;
-let difficultyList = document.getElementById("difficulty-list");
-let optionsList = document.getElementById("options-list");
 let answer = "";
 let timerId;
+
+
+let difficultyList = document.getElementById("difficulty-list");
+let optionsList = document.getElementById("options-list");
+let userNameLabel = document.getElementById('user-name-label');
+let mainLabelOne = document.getElementsByClassName('main-label')[1];
+let mainLabelTwo = document.getElementsByClassName('main-label')[2];
+let mainLabelThree = document.getElementsByClassName('main-label')[3];
+let givenUserNameOne = document.getElementsByClassName("given-user-name")[0];
+let givenUserNameTwo = document.getElementsByClassName("given-user-name")[1];
+let givenUserNameThree = document.getElementsByClassName("given-user-name")[2];
+let questionSection = document.getElementById('questions-sec');
+let difficultyPanel = document.getElementById('choose-difficulty-panel');
+let noUserNameMessage = document.getElementById("no-user-name-msg");
+let startGameButton = document.getElementById("start-game-btn");
+let restartGameButton = document.getElementById("restart-page-btn");
+let setCorrectAnswer = document.getElementById("correct-ans");
+let setInCorrectAnswer = document.getElementById("incorrect-ans");
+let setCalculatedIq = document.getElementById("calculated-iq");
+let setIqStatus = document.getElementById("iq-status");
+let setTotalScore = document.getElementById("total-score");
+let loadResult = document.getElementById('load-result');
+
 document.addEventListener("DOMContentLoaded", function() {
 
-    let userNameLabel = document.getElementById('user-name-label');
-    let mainLabel = document.getElementsByClassName('main-label')[1];
-    let difficultyPanel = document.getElementById('choose-difficulty-panel');
     userNameLabel.style.display='block';
-    document.getElementById('questions-sec').style.display = "none"
+    questionSection.style.display = "none"
+    mainLabelOne.style.display="none";
+    mainLabelTwo.style.display = "none";
+    mainLabelThree.style.display = "none";
 
-    mainLabel.style.display="none";
-    document.getElementsByClassName('main-label')[2].style.display = "none";
-    // last panel
-    document.getElementsByClassName('main-label')[3].style.display = "none";
-
-        document.getElementById("start-game-btn").addEventListener("click",function(){
+        startGameButton.addEventListener("click",function(){
 
             if(this.id === "start-game-btn"){
                 let userName = document.getElementById("user-name").value;
                 localStorage.setItem("user-name",userName);
                 if(userName === ""){
-                    document.getElementById("no-user-name-msg").innerText = "Kindly provide a user name";
+                    noUserNameMessage.innerText = "Kindly provide a user name";
                 }else{
                     userNameLabel.style.display='none';
                     difficultyPanel.style.display="block";
-                    mainLabel.style.display="block";
-                    document.getElementsByClassName("given-user-name")[0].innerText = userName;
+                    mainLabelOne.style.display="block";
+                    givenUserNameOne.innerText = userName;
                     
                 }
             } else {
@@ -189,27 +207,24 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             
         });
-        document.getElementById("restart-page-btn").addEventListener("click",function(){
-        // for(let i = 0;i<=3;i++){
-        //     document.getElementsByClassName('main-label')[i].style.display = "none";
-        // }
-        // document.body.style.display = "none";
-        document.getElementsByClassName('main-label')[1].style.display = "none";
+        
+        restartGameButton.addEventListener("click",function(){
+            mainLabelOne.style.display = "none";
             window.location.reload(true);
             // history.go();
         });
         
-               difficultyList.addEventListener("click",function(event){
+            difficultyList.addEventListener("click",function(event){
             //Set timer
             if (isActive === false) {
                 level = event.target.innerText;
             } else {
                 level = localStorage.getItem("difficulty");
             }
-            mainLabel.style.display="none";                
-            document.getElementById('questions-sec').style.display = "block"
-            document.getElementsByClassName('main-label')[2].style.display = "block";
-            document.getElementsByClassName("given-user-name")[1].innerHTML = localStorage.getItem("user-name");
+            mainLabelOne.style.display="none";                
+            questionSection.style.display = "block"
+            mainLabelTwo.style.display = "block";
+            givenUserNameTwo.innerHTML = localStorage.getItem("user-name");
             localStorage.setItem("difficulty",level);
             isActive = true;
             startGame(level);         
@@ -220,14 +235,14 @@ document.addEventListener("DOMContentLoaded", function() {
             answer = event.target.innerText;
             if(correctAnswer === answer){
                 ++validAnswerCounter;
-                document.getElementById("correct-ans").innerText = validAnswerCounter;
+                setCorrectAnswer.innerText = validAnswerCounter;
             }
             else if(answer === ""){
                 ++invalidAnswerCounter;
-                document.getElementById("incorrect-ans").innerText = invalidAnswerCounter;
+                setInCorrectAnswer.innerText = invalidAnswerCounter;
             }else{
                 ++invalidAnswerCounter;
-                document.getElementById("incorrect-ans").innerText = invalidAnswerCounter;
+                setInCorrectAnswer.innerText = invalidAnswerCounter;
             }
             let totalQuestions = validAnswerCounter + invalidAnswerCounter
             console.log("The total is"+ totalQuestions)
@@ -238,18 +253,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 difficultyList.click();
             }else{
                 // Main score
-                document.getElementsByClassName("given-user-name")[2].innerHTML = localStorage.getItem("user-name");
+                givenUserNameThree.innerHTML = localStorage.getItem("user-name");
                 let average = averageOfCorrectAnswers(validAnswerCounter);
-                document.getElementById("calculated-iq").innerText = average[0];
-                document.getElementById("iq-status").innerText = average[1];
-                document.getElementById("total-score").innerText = validAnswerCounter;
+                setCalculatedIq.innerText = average[0];
+                setIqStatus.innerText = average[1];
+                setTotalScore.innerText = validAnswerCounter;
                 optionsList.style.pointerEvents = "none";
-                document.getElementById('load-result').style.display = "block";
+                loadResult.style.display = "block";
                 clearInterval(timerId);
                 setTimeout(() => {
-                    document.getElementById('questions-sec').style.display = "none";
-                    document.getElementsByClassName('main-label')[3].style.display = "block";
-                    document.getElementsByClassName("user-logo-name")[2].style.float = "none";
+                    questionSection.style.display = "none";
+                    mainLabelThree.style.display = "block";
+                    // document.getElementsByClassName("user-logo-name")[2].style.float = "none";
                   }, 5000);          
             }
         });
@@ -284,7 +299,7 @@ function startGame(gameDifficulty){
 function setGameArea(gameQuestions,gameDifficulty){
     // First shuffle questions
     let randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
-    document.getElementById("questions-sec").children[0].innerText = randomGeneratedQuestions[0].question;
+    questionSection.children[0].innerText = randomGeneratedQuestions[0].question;
     let options = document.getElementById("options-list");
 
     options.children[0].innerText = randomGeneratedQuestions[0].options[0];
