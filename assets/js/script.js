@@ -204,13 +204,21 @@ function preventMultipleSelectionOfList(){
     document.onselectstart = () => {
         return false;
     };
-    document.oncopy = () => {
-        return false;
-    };
-    document.ondrag = () => {
-        return false;
-    };
-
+    // document.oncopy = () => {
+    //     return false;
+    // };
+    // document.ondrag = () => {
+    //     return false;
+    // };
+    // document.ondrop = () => {
+    //     return false;
+    // };
+    // document.oncut = () => {
+    //     return false;
+    // };
+    // document.onpaste = () => {
+    //     return false;
+    // };
 }
 
 /**

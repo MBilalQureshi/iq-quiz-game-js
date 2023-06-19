@@ -69,7 +69,7 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
 - [JS](https://www.javascript.com/)
 
-
+## Testing
 To see complete testing section, kindly click [here](/TESTING.md).
 
 ## Deployment
@@ -99,12 +99,23 @@ With Forking one can make a copy of a repository and to view or make changes in 
 
 ## Credits
 ### Content
-- Basic concepts of making website is understood from Code Institute's [Love Maths](https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode) project.
+- Basic concepts of using javascript along html ans css is understood from Code Institute's [Love Maths](https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode) project.
 - The icons in header and favicon is taken from [Font awesome](https://fontawesome.com/)
+
 ### Media
 - The background image on main page is taken from [Pixabay](https://www.pexels.com/photo/view-of-elephant-in-water-247431/) available on pexels website.
+
 ### Extra Help
+- Shadow box effect is copied from [this](https://getcssscan.com/css-box-shadow-examples) link.  
+- Code of countdown is taken from [this](https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward) link.
+- IQ related questions are taken from following links:
+    - [Link 1](https://www.proprofs.com/quiz-school/story.php?title=easy-iq-test)
+    - [Link 2](https://www.proprofs.com/quiz-school/story.php?title=iq-test_70kt)
+    - [Link 3](https://www.allthetests.com/iq-tests/quiz18/1139060031/very-difficult-iq-te)
+    - [Link 4](https://www.proprofs.com/quiz-school/story.php?title=iq-test-unfinished)
+- Learned concept of select start disable concept inside js using [this](https://developer.mozilla.org/en-US/docs/Web/API/Node/selectstart_event) link.
+- Learned concept of generating random array from [this](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s) link.
 
 ### Acknowledgements
-- My Mentor for helpful feedbacks during project development.
+- My Mentor Antonio Rodriguez for helpful feedbacks during project development.
 - Code Institute team for pointing in right direction.
