@@ -24,6 +24,24 @@ I confirmed that website is completely responsive on different screen sizes.
 | Tablet (DevTools iPad Pro - 1024 x 1366) | ![screenshot](/documentation/readme_img/ipadpro.png) | Works as expected |
 | Nest Hub Max (DevTools - 1280 x 800) | ![screenshot](/documentation/readme_img/nest-hub.png) | Works as expected |
 
+## Validator Testing
+
+### HTML validator
+
+I used the recommended [W3C validator](https://validator.w3.org/) to validate my HTML files.
+
+| Page | W3C URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Main Page | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmbilalqureshi.github.io%2Fiq-quiz-game-js%2F) | ![screenshot](/documentation/readme_img/html-validator.png) | Pass: No Errors |
+
+### CSS validator
+- I confirmed that no errors were returned when CSS code was passed through [jigsaw validator](https://jigsaw.w3.org/css-validator/).
+
+| File | Jigsaw URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| style.css | [Jigsaw]() | ![screenshot](/documentation/readme_img/) | Pass: No Errors |
+
+
 ## Accessibility
 
 ### Fonts and colors
