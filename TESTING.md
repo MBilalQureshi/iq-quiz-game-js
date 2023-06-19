@@ -41,3 +41,5 @@ Following are the results of Lighthouse audit of every page for mobile and deskt
 | Home | Mobile | ![screenshot](/documentation/readme_img/mobile-lighthouse.png) |
 | Home | Desktop | ![screenshot](/documentation/readme_img/desktop-lighthouse.png) |
 
+Return back to the [README.md](/README.md) file.
+
