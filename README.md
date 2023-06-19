@@ -7,10 +7,9 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 
 ![Screenshot of IQ Quiz Game website mockup](/documentation/readme_img/Mockup-p2-js.png)
 
-
-## User Experience
-
-### User Stories
+## Features
+- On Main screen 
+## User Stories
 
 #### As a Challenger
 - As a challenger I want to nagivate through the website without any issue.
