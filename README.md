@@ -7,12 +7,10 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 
 ![Screenshot of IQ Quiz Game website mockup](/documentation/readme_img/Mockup-p2-js.png)
 
-## Features
-- On Main screen 
 ## User Stories
 
-#### As a Challenger
-- As a challenger I want to nagivate through the website without any issue.
+### As a Challenger
+- I can nagivate through the website without any issue.
 - I can put my knowledege to test .
 - I can select from the levels of difficulty.
 - I can keep track of correct answers.
@@ -20,12 +18,44 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 - I can restart game once its over.
 - I can get my IQ level result in the end.
 
-#### As a Lerner
-- As a lerner I want to navigate throughout this website witout an issue.
-- I can select from the levels of difficulty.
+### As a Lerner
+- I can navigate throughout this website witout an issue.
 - I can come back to learn again if certain answers are incorrect
 - I can see the score if an answer is incorrect for future reference.
-- I can read the questions and provide answers in given time as a lerner.
+- I can select from the levels of difficulty.
+- I can increase my knowledge based on each try after playing the game.
+
+## Features
+- Header
+    - On top of the page header is clearly visible to users and it can tell by its name what the website is about.
+
+![Screenshot of header](/documentation/readme_img/header.png)
+
+- Main Screen
+    - On Main screen once user is greeted, he/she is asked to enter a username.
+    - The username should not exceed 10 charcters.
+
+![Screenshot of main screen](/documentation/readme_img/main-screen.png)
+
+- Difficulty Panel
+    - Here user can select the difficulty of the game.
+    - User name is visible on this screen.
+
+![Screenshot of difficulty panel](/documentation/readme_img/select-difficulty.png)
+
+- Question's Panel
+    - User is able to select from one of four options.
+    - For medium and easy difficulty 30 seconds are given but for hard difficulty 120 seconds are given.
+    - Username and timer is given on the top of the screen.
+    - The corrent and incorrect counter is on the bottom. If the answer is correct or incorrect after clicking one of the option, the counter increases by one.
+    - If the user is not able to provide answer in time, incorrect counter is increased by one.
+
+![Screenshot of Question's Panel](/documentation/readme_img/questions-panel.png)
+
+- Loading Result
+    - Once last question is answered the timer stops and loading result appears in the bottom of last question to give more gaming experince.
+
+![Screenshot of Loading Result](/documentation/readme_img/loading-result.png)
 
 
 ## Technologies Used
