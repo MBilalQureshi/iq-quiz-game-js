@@ -24,5 +24,20 @@ I confirmed that website is completely responsive on different screen sizes.
 | Tablet (DevTools iPad Pro - 1024 x 1366) | ![screenshot](/documentation/readme_img/ipadpro.png) | Works as expected |
 | Nest Hub Max (DevTools - 1280 x 800) | ![screenshot](/documentation/readme_img/nest-hub.png) | Works as expected |
 
+## Accessibility
 
+### Fonts and colors
+
+I confirmed that fonts and colors that are chosen are easy to read and enhances user experince.
+
+### Lighthouse Audit
+- I have used lighthouse devtool after deployment to fix major issues. Issues found by Lighthouse is mentioned below.
+    - Reduce background image sizes.
+    
+Following are the results of Lighthouse audit of every page for mobile and desktop. Accessibility is 100 in every case.
+
+| Page | Size | Screenshot |
+| --- | --- | --- |
+| Home | Mobile | ![screenshot](/documentation/readme_img/mobile-lighthouse.png) |
+| Home | Desktop | ![screenshot](/documentation/readme_img/desktop-lighthouse.png) |
 
