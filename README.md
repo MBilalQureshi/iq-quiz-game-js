@@ -57,6 +57,12 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 
 ![Screenshot of Loading Result](/documentation/readme_img/loading-result.png)
 
+- Result Panel
+    - Here user can see the total score.
+    - Average of his/her IQ.
+    - Status of the IQ.
+
+![Screenshot of Loading Result](/documentation/readme_img/result-panel.png)
 
 ## Technologies Used
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)

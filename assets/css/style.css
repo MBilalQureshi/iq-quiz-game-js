@@ -123,6 +123,8 @@ li:hover{
 h2 {
     font-family: 'Oswald', sans-serif;
     font-size: xxx-large;
+    background-color: #000;
+    color: #fff;
     /* margin-top: 11%; */
 }
 
@@ -131,6 +133,7 @@ h2 {
 }
 #result{
     clear: both;
+    padding: 24px;
 }
 #load-result{
     display: none;

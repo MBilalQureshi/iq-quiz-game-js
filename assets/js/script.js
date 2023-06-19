@@ -341,7 +341,7 @@ function averageOfCorrectAnswers(noOfValidAnswers){
     if(average >=0 && average <= 25){
         return[average,"Below average intelligence"];
     }else if(average >= 25 && average <=50){
-        return[average,"Average IQ"];
+        return[average,"Average intelligence"];
     }else if(average >= 50 && average <=75){
         return[average,"Above average intelligence"];
     }else if(average >= 75 && average <=100){
