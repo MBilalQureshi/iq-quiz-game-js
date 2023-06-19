@@ -1,89 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IQ quiz game is not only for those who wants to check their iq but also for those who wants to have fun along with leraning something.">
-    <meta name="keywords" content="Iq quiz, game, maths, general knowledge, quiz, multiple choice, questions">
-    <meta name="author" content="Muhammad Bilal">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>IQ Quiz Game</title>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <h1 id = "logo"><i class="fa-sharp fa-solid fa-brain"></i>IQ Quiz Game</h1>
-    </header>
-<div id="body-inner">
-    <!-- Enter User Name -->
-    <section class="main-label">
-       <div id = "user-name-label"> 
-            <p>Welcome Player<br>You are here to challange yourself or to learn something new.<br>If so, Kindly Enter your user name</p>
-            <div>
-                <input type="text" id="user-name" name="uname" placeholder="Enter user name here" maxlength="10" required><br>
-                <button type="button" id="start-game-btn">Start Game</button><br>
-                <span id="no-user-name-msg"></span>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="IQ quiz game is not only for those who wants to check their iq but also for those who wants to have fun along with leraning something.">
+        <meta name="keywords" content="Iq quiz, game, maths, general knowledge, quiz, multiple choice, questions">
+        <meta name="author" content="Muhammad Bilal">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>IQ Quiz Game</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <h1 id = "logo"><i class="fa-sharp fa-solid fa-brain"></i>IQ Quiz Game</h1>
+        </header>
+        <div id="body-inner">
+            <!-- Welcome panel -->
+            <div class="main-label">
+                <div id = "user-name-label">
+                    <p>Welcome Player<br>You are here to challange yourself or to learn something new.<br>If so, Kindly Enter your user name</p>
+                    <div>
+                        <input type="text" id="user-name" name="uname" placeholder="Enter user name here" maxlength="10" required><br>
+                        <button type="button" id="start-game-btn">Start Game</button><br>
+                        <span id="no-user-name-msg"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Difficulty selection panel -->
+            <div class="main-label">
+                <div class="user-logo-name">
+                    <i class="fa-regular fa-user"></i><span class="given-user-name">30sec</span>
+                </div>
+                <div id="choose-difficulty-panel">
+                    <p>Kindly choose the difficulty level</p>
+                    <ul id="difficulty-list">
+                        <li>Easy</li>
+                        <li>Medium</li>
+                        <li>Hard</li>
+                    </ul>
+                    <span id="select-valid-difficulty"></span>
+                </div>
+            </div>
+            <!-- Questions Panel -->
+            <div class="main-label">
+                <div class="user-logo-name">
+                    <i class="fa-regular fa-user"></i><span class="given-user-name"></span>
+                </div>
+                <div class="timer-logo">
+                    <i class="fa-regular fa-clock"></i><span id="timer"></span>
+                </div>
+                <div id="questions-sec">
+                    <p></p>
+                    <ul id="options-list">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div id="score">
+                        <p>Correct answers : <span id ="correct-ans">0</span>&nbsp;&nbsp;&nbsp;Incorrect answers : <span id ="incorrect-ans">0</span></p>
+                    </div>
+                    <p id="load-result">Loading Result . . .</p>
+                </div>
+            </div>
+            <!-- Final result panel -->
+            <div class="main-label">
+                <div class="user-logo-name">
+                    <i class="fa-regular fa-user"></i><span class="given-user-name"></span>
+                </div>
+                <div id="result">
+                    <h2>Results are here</h2>
+                    <p>You total score is <span id="total-score"></span>&nbsp; out of 8 questions</p>
+                    <br>
+                    <p>Based on the calculations, average of your IQ is: <span id="calculated-iq"></span>%</p>
+                    <br>
+                    <p>Status of your IQ is: <span id="iq-status"></span></p>
+                    <br>         
+                    <button type="button" id="restart-page-btn">Restart Game</button>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- section 2 -->
-    <section class="main-label">
-        <div class="user-logo-name">
-            <i class="fa-regular fa-user"></i><span class="given-user-name">30sec</span>
-        </div>
-        <div id="choose-difficulty-panel">
-            <p>Kindly choose the difficulty level</p>
-            <ul id="difficulty-list">
-                <li>Easy</li>
-                <li>Medium</li>
-                <li>Hard</li>
-            </ul>
-            <span id="select-valid-difficulty"></span>
-        </div>
-    </section>
-
-    <!-- Questions -->
-    <section class="main-label">
-        <div class="user-logo-name">
-            <i class="fa-regular fa-user"></i><span class="given-user-name"></span>
-        </div>
-        <div class="timer-logo">
-            <i class="fa-regular fa-clock"></i><span id="timer"></span>
-        </div>
-        <div id="questions-sec">
-            <p></p>
-            <ul id="options-list">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div id="score">
-                <p>Correct answers : <span id ="correct-ans">0</span>&nbsp;&nbsp;&nbsp;Incorrect answers : <span id ="incorrect-ans">0</span></p>
-            </div>
-            <p id="load-result">Loading Result . . .</p>
-        </div>
-    </section>
-
-    <!-- Final score screen -->
-    <section class="main-label">
-        <div class="user-logo-name">
-            <i class="fa-regular fa-user"></i><span class="given-user-name"></span>
-        </div>
-        <div id="result">
-            <h2>Results are here</h2>
-            <p>You total score is <span id="total-score"></span>&nbsp; out of 8 questions</p><br>
-            <p>Based on the calculations, average of your IQ is: <span id="calculated-iq"></span>%</p><br>
-            <p>Status of your IQ is: <span id="iq-status"></span></p><br>         
-            <button type="button" id="restart-page-btn">Restart Game</button>
-        </div>
-    </section>
-    
-</div>
-    <script src="./assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/829eda7611.js" crossorigin="anonymous"></script>
-</body>
+        <script src="https://kit.fontawesome.com/829eda7611.js" crossorigin="anonymous"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
