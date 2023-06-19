@@ -170,6 +170,7 @@ let givenUserNameThree = document.getElementsByClassName("given-user-name")[2];
 let questionSection = document.getElementById('questions-sec');
 let difficultyPanel = document.getElementById('choose-difficulty-panel');
 let noUserNameMessage = document.getElementById("no-user-name-msg");
+let selectValidDifficulty = document.getElementById("select-valid-difficulty");
 let startGameButton = document.getElementById("start-game-btn");
 let restartGameButton = document.getElementById("restart-page-btn");
 let setCorrectAnswer = document.getElementById("correct-ans");
@@ -192,34 +193,10 @@ document.addEventListener("DOMContentLoaded", function() {
     restartGameButton.addEventListener("click",restartGame);
     difficultyList.addEventListener("click",checkDifficulty);
     optionsList.addEventListener("click",checkSolutionAndCalculateResult);
-    preventMultipleSelectionOfList();
-});
-
-/**
- * During game when questions being asked
- * this function prevents multiple selection
- * of answers.
- */
-function preventMultipleSelectionOfList(){
     document.onselectstart = () => {
         return false;
     };
-    // document.oncopy = () => {
-    //     return false;
-    // };
-    // document.ondrag = () => {
-    //     return false;
-    // };
-    // document.ondrop = () => {
-    //     return false;
-    // };
-    // document.oncut = () => {
-    //     return false;
-    // };
-    // document.onpaste = () => {
-    //     return false;
-    // };
-}
+});
 
 /**
  * This function checks the selected difficulty, sets the
@@ -228,18 +205,22 @@ function preventMultipleSelectionOfList(){
  * @param {*} event 
  */
 function checkDifficulty(event){
-    if (isActive === false) {
-        level = event.target.innerText;
+    if(event.target.innerText.length > 7 && isActive === false){
+        selectValidDifficulty.innerText = "Kindly select valid difficulty";
     } else {
-        level = localStorage.getItem("difficulty");
+        if (isActive === false) {
+            level = event.target.innerText;
+        } else {
+            level = localStorage.getItem("difficulty");
+        }
+        mainLabelOne.style.display="none";
+        questionSection.style.display = "block"
+        mainLabelTwo.style.display = "block";
+        givenUserNameTwo.innerHTML = localStorage.getItem("user-name");
+        localStorage.setItem("difficulty",level);
+        isActive = true;
+        startGame(level); 
     }
-    mainLabelOne.style.display="none";
-    questionSection.style.display = "block"
-    mainLabelTwo.style.display = "block";
-    givenUserNameTwo.innerHTML = localStorage.getItem("user-name");
-    localStorage.setItem("difficulty",level);
-    isActive = true;
-    startGame(level); 
 }
 
 function checkUserName (){

@@ -50,7 +50,7 @@ font-family: 'Roboto', sans-serif; */
     clear: both;
 }
 
-p, input,button,#no-user-name-msg { 
+p, input,button,#no-user-name-msg,#select-valid-difficulty { 
     font-family: 'Oswald', sans-serif;  
     font-size: xx-large;
     font-weight: bold;
@@ -59,7 +59,7 @@ p, input,button,#no-user-name-msg {
 #choose-difficulty-panel > p{
     margin-top: 20px;
 }
-#no-user-name-msg{
+#no-user-name-msg, #select-valid-difficulty{
     color: #ff0000;
 }
 input[type="text"]{
