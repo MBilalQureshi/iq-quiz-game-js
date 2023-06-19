@@ -69,6 +69,9 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
 - [JS](https://www.javascript.com/)
 
+
+To see complete testing section, kindly click [here](/TESTING.md).
+
 ## Deployment
 ### GitHub Pages
 This website was deployed to GitHub pages. The steps of deployment are mentioned below.
