@@ -18,7 +18,7 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 - I can restart game once its over.
 - I can get my IQ level result in the end.
 
-### As a Lerner
+### As a Learner
 - I can navigate throughout this website witout an issue.
 - I can come back to learn again if certain answers are incorrect
 - I can see the score if an answer is incorrect for future reference.

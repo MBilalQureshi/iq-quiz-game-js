@@ -10,6 +10,7 @@ font-family: 'Roboto', sans-serif; */
     border: none;
 }
 
+
 #body-inner {
     background: #000000 url("../images/elephant-background.webp") no-repeat
         center center;
@@ -183,6 +184,7 @@ h2 {
 @media screen and (max-width: 700px) {
     #body-inner {
         /* calc(140vh - 150px) */
+        
         min-height: auto;
     }
     .main-label {
@@ -210,13 +212,13 @@ h2 {
 }
 
 /* For Mobile phones */
-@media screen and (max-width: 455px) {
+/* @media screen and (max-width: 455px) {
     #body-inner {
-        min-height: auto;
+        min-height: auto; */
         /* height: 90vh; */
-    }
+    
 
-    .main-label {
+    /* .main-label {
         transform: translate(-50%, -50%);
         width: 90%;
         top: 50%;
@@ -232,7 +234,7 @@ h2 {
     h2 {
         font-size: xx-large;
     }
-}
+} */
 @media screen and (max-width: 455px) {
     #body-inner {
         min-height: auto;
