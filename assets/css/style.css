@@ -1,8 +1,5 @@
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300&family=Roboto&display=swap");
-
-/* font-family: 'Bebas Neue', sans-serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Roboto', sans-serif; */
 
 * {
     padding: 0;
@@ -10,21 +7,19 @@ font-family: 'Roboto', sans-serif; */
     border: none;
 }
 
-
+/* Background image */
 #body-inner {
     background: #000000 url("../images/elephant-background.webp") no-repeat
         center center;
     background-size: cover;
-    /* width : 100vw; */
-    /* height: 100vh; */
-    /* min-height: calc(100vh - 150px); */
-	position: relative;
-	min-height: calc(115vh - 150px);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    position: relative;
+    min-height: calc(115vh - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Logo */
 #logo {
     font-family: "Bebas Neue", sans-serif;
     text-align: center;
@@ -34,41 +29,26 @@ font-family: 'Roboto', sans-serif; */
     color: #000;
 }
 
+/* Main label on every screen */
 .main-label {
-    /* background-color: #fff; */
     position: absolute;
     top: 20%;
-    /*transform: translate(-50%, -50%); */
-    /* left: 25%; */
     width: 50%;
-    /* height: 70%; */
     text-align: center;
     line-height: 50px;
-/*     
-    display: flex;
-    justify-content: space-around; */
-    /* top: 25%; */
     border-radius: 0.8em;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
         rgba(0, 0, 0, 0.22) 0px 15px 12px;
-        background-color: #fff;
-        
+    background-color: #fff;
 }
 
+/* pargraphs, button, fonts */
 #user-name-label,
 #choose-difficulty-panel,
-#questions-sec, #result-sec {
+#questions-sec,
+#result-sec {
     padding: 16px 16px 16px 16px;
-    /* margin-top: 5%; */
-    /* line-height: 60px; */
-    /*  */
     clear: both;
-
-
-    /* background-color: #fff;
-    position: fixed; */
-    /* border-radius: 0.8em; */
-    /* width: 90%; */
 }
 
 p,
@@ -92,10 +72,9 @@ input[type="text"] {
     border: 2px solid #000;
     padding: 4px 4px 4px 8px;
     margin-bottom: 10px;
-    /* width: -webkit-fill-available;
-    font-size: 1.3em; */
 }
 
+/* Start and restart button */
 #start-game-btn,
 #restart-page-btn {
     padding: 8px 8px 8px 8px;
@@ -107,9 +86,8 @@ input[type="text"] {
     color: #fff;
     background-color: #000;
 }
-#main-inner{
-    align-items: center;
-}
+
+/* Lists */
 ul {
     font-family: "Oswald", sans-serif;
     list-style-type: none;
@@ -123,18 +101,18 @@ li:hover {
     border-radius: 0.8em;
     cursor: pointer;
 }
+
+/* User logo */
 .user-logo-name {
     font-family: "Oswald", sans-serif;
     font-size: x-large;
     font-weight: bold;
-    /* display: flex;
-    align-items: center; */
     padding: 4px 0px 0px 4px;
     float: left;
     margin-left: 8px;
-    /* position: absolute; */
 }
 
+/* Timer logo */
 .timer-logo {
     font-family: "Oswald", sans-serif;
     font-size: x-large;
@@ -156,15 +134,16 @@ h2 {
     background-color: #000;
     color: #fff;
     padding: 8px;
-    /* margin-top: 11%; */
 }
 
+/* Font-awesome logos */
 .fa-regular {
     margin-right: 8px;
 }
+
+/* Result panel */
 #result {
     clear: both;
-    /* padding: 24px; */
 }
 #load-result {
     display: none;
@@ -172,17 +151,9 @@ h2 {
     color: #fff;
 }
 
-/* Media Quries */
-/* @media screen and (max-width: 1285px) {
-    #body-inner{
-        min-height: calc(120vh - 150px);
-    }
-} */
-
 /* For large Tablets */
 @media screen and (max-width: 1250px) {
     #body-inner {
-        /* min-height: calc(150vh - 150px); */
         min-height: calc(110vh - 150px);
     }
     .main-label {
@@ -191,7 +162,6 @@ h2 {
 }
 /* For Medium size Tablets */
 @media screen and (max-width: 780px) {
-
     .main-label {
         width: 90%;
     }
@@ -222,25 +192,20 @@ h2 {
     #body-inner {
         min-height: calc(200vh - 150px);
     }
-    /* .main-label {
-        width: 90%;
-
-    } */
     input[type="text"] {
         width: -webkit-fill-available;
         font-size: 1.3em;
     }
 }
 
+/* For medium Mobiles */
 @media screen and (max-width: 455px) {
     #body-inner {
         min-height: calc(115vh - 150px);
     }
     .main-label {
-        width: 90%;
         top: 15%;
     }
-
 }
 
 /* For much smaller mobile screens */
@@ -251,7 +216,6 @@ h2 {
     .main-label {
         width: 95%;
     }
-
     p,
     input,
     button,

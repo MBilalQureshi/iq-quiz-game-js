@@ -1,3 +1,6 @@
+/**
+ * Main wrapper for loading all DOM content
+ */
 document, addEventListener('DOMContentLoaded', function() {
 
     const easyLvlQuestions = [{
@@ -238,7 +241,7 @@ document, addEventListener('DOMContentLoaded', function() {
                 givenUserNameOne.innerText = userName;
             }
         } else {
-            alert("Invalid Username");
+            alert("Invalid username");
             throw ("Username is invalid");
         }
     }

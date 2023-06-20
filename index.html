@@ -31,7 +31,6 @@
             </div>
             <!-- Difficulty selection panel -->
             <div class="main-label">
-                <div id="main-inner">
                 <div class="user-logo-name">
                     <i class="fa-regular fa-user"></i><span class="given-user-name">30sec</span>
                 </div>
@@ -44,7 +43,6 @@
                     </ul>
                     <span id="select-valid-difficulty"></span>
                 </div>
-            </div>
             </div>
             <!-- Questions Panel -->
             <div class="main-label">
@@ -71,21 +69,23 @@
             <!-- Final result panel -->
             <div class="main-label">
                 <div id="result-sec">
-                <div class="user-logo-name">
-                    <i class="fa-regular fa-user"></i><span class="given-user-name"></span>
+                    <div class="user-logo-name">
+                        <i class="fa-regular fa-user"></i><span class="given-user-name"></span>
+                    </div>
+                    <div id="result">
+                        <h2>Results are here</h2>
+                        <p>You total score is <span id="total-score"></span>&nbsp; out of 8 questions</p>
+                        <p>Based on the calculations, average of your IQ is: <span id="calculated-iq"></span>%</p>
+                        <p>Status of your IQ is: <span id="iq-status"></span></p>
+                        <br>         
+                        <button type="button" id="restart-page-btn">Restart Game</button>
+                    </div>
                 </div>
-                <div id="result">
-                    <h2>Results are here</h2>
-                    <p>You total score is <span id="total-score"></span>&nbsp; out of 8 questions</p>                  
-                    <p>Based on the calculations, average of your IQ is: <span id="calculated-iq"></span>%</p>                   
-                    <p>Status of your IQ is: <span id="iq-status"></span></p>
-                    <br>         
-                    <button type="button" id="restart-page-btn">Restart Game</button>
-                </div>
-            </div>
             </div>
         </section>
+        <!-- Font awesome link -->
         <script src="https://kit.fontawesome.com/829eda7611.js" crossorigin="anonymous"></script>
+        <!-- link to scripts.js -->
         <script src="./assets/js/script.js"></script>
     </body>
 </html>
