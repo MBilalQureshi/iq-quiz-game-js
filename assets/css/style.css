@@ -42,7 +42,7 @@
     background-color: #fff;
 }
 
-/* pargraphs, button, fonts */
+/* pargraphs, button, lists and headings*/
 #user-name-label,
 #choose-difficulty-panel,
 #questions-sec,
@@ -157,13 +157,16 @@ h2 {
         min-height: calc(110vh - 150px);
     }
     .main-label {
-        width: 80%;
+        top: 30%;
+        width: 90%;
+        line-height: 70px;
     }
 }
 /* For Medium size Tablets */
 @media screen and (max-width: 780px) {
     .main-label {
-        width: 90%;
+        line-height: 50px;
+        top: 20%;
     }
     p,
     input,
@@ -177,6 +180,13 @@ h2 {
     }
 }
 
+/* For big tablets */
+@media screen and (max-width: 780px), (orientation: landscape) {
+    #body-inner {
+        min-height: calc(180vh - 150px);
+    }
+}
+
 /* For Medium size Tablets */
 @media screen and (max-width: 700px) {
     #body-inner {
@@ -184,6 +194,20 @@ h2 {
     }
     .main-label {
         line-height: 35px;
+    }
+}
+
+/* For larger to medium tablets */
+@media screen and (max-width: 780px), (orientation: portrait) {
+    #body-inner {
+        min-height: calc(110vh - 150px);
+    }
+}
+
+/* For larger to medium tablets */
+@media screen and (max-width: 670px), (orientation: landscape) {
+    #body-inner {
+        min-height: calc(115vh - 150px);
     }
 }
 
@@ -198,7 +222,14 @@ h2 {
     }
 }
 
-/* For medium Mobiles */
+/* lanscape view for tablets and mobiles*/
+@media screen and (max-width: 500px), (orientation: landscape) {
+    #body-inner {
+        min-height: calc(230vh - 150px);
+    }
+}
+
+/* For medium Mobile screens*/
 @media screen and (max-width: 455px) {
     #body-inner {
         min-height: calc(115vh - 150px);
@@ -212,6 +243,9 @@ h2 {
 @media screen and (max-width: 350px) {
     #logo {
         font-size: xx-large;
+    }
+    #body-inner {
+        min-height: calc(130vh - 150px);
     }
     .main-label {
         width: 95%;
