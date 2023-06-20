@@ -148,7 +148,6 @@ const hardLvlQuestions = [
     }
 ];
 
-
 let correctAnswer;
 let validAnswerCounter = 0;
 let invalidAnswerCounter = 0;
@@ -156,7 +155,6 @@ let level;
 let isActive = false;
 let answer = "";
 let timerId;
-
 
 let difficultyList = document.getElementById("difficulty-list");
 let optionsList = document.getElementById("options-list");
@@ -184,7 +182,7 @@ let getUserName = document.getElementById("user-name");
 
 document.addEventListener("DOMContentLoaded", function() {
     userNameLabel.style.display='block';
-    questionSection.style.display = "none"
+    questionSection.style.display = "none";
     mainLabelOne.style.display="none";
     mainLabelTwo.style.display = "none";
     mainLabelThree.style.display = "none";
@@ -214,7 +212,7 @@ function checkDifficulty(event){
             level = localStorage.getItem("difficulty");
         }
         mainLabelOne.style.display="none";
-        questionSection.style.display = "block"
+        questionSection.style.display = "block";
         mainLabelTwo.style.display = "block";
         givenUserNameTwo.innerHTML = localStorage.getItem("user-name");
         localStorage.setItem("difficulty",level);
@@ -223,6 +221,10 @@ function checkDifficulty(event){
     }
 }
 
+/**
+ * This functions checks if the user name is provide
+ * or not. If not give a message to provide username.
+ */
 function checkUserName (){
     if(this.id === "start-game-btn"){
         let userName = getUserName.value;
@@ -254,12 +256,11 @@ function checkSolutionAndCalculateResult(event){
             ++invalidAnswerCounter;
             setInCorrectAnswer.innerText = invalidAnswerCounter;
         }
-        let totalQuestions = validAnswerCounter + invalidAnswerCounter
+        let totalQuestions = validAnswerCounter + invalidAnswerCounter;
 
         if(totalQuestions <= 7){
             difficultyList.click();
         }else{
-            // Main score
             givenUserNameThree.innerHTML = localStorage.getItem("user-name");
             let average = averageOfCorrectAnswers(validAnswerCounter);
             setCalculatedIq.innerText = average[0];
@@ -274,57 +275,68 @@ function checkSolutionAndCalculateResult(event){
                 }, 5000);          
         }
 }
+
+/**
+ * This function simply reloads the game.
+ */
 function restartGame(){
-    mainLabelOne.style.display = "none";
+    // mainLabelOne.style.display = "none";
     window.location.reload(true);
 }
 
 /**
- * 
+ * This function takes difficulty as a parameter and 
+ * set the game are based in difficulty
  * @param {*} gameDifficulty 
  */
 function startGame(gameDifficulty){
     if(gameDifficulty === "Easy"){
-        // easy question array
         setGameArea(easyLvlQuestions,gameDifficulty);      
     } else if(gameDifficulty === "Medium"){
-        // Medium question array
         setGameArea(mediumLvlQuestions,gameDifficulty);
     }else if(gameDifficulty === "Hard"){
-        // Hard question array
         setGameArea(hardLvlQuestions,gameDifficulty);
     }else{
-        alert("None");
+        alert("This is not a valid difficulty");
+        throw("Invalid difficulty level found");
     }
 }
 
+/**
+ * This function starts the countdown by calling another function.
+ * After that it generates random array and sets the options in question.
+ * Then it removes the question that was being asked from array and set new array.
+ * @param {*} gameQuestions 
+ * @param {*} gameDifficulty 
+ */
 function setGameArea(gameQuestions,gameDifficulty){
-    // First shuffle questions
-    let randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - .5);
+    setCountdown(gameDifficulty);
+    // Learned concept of generating randow array from this https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s video
+    let randomGeneratedQuestions = gameQuestions.sort(() => Math.random() - 0.5);
     questionSection.children[0].innerText = randomGeneratedQuestions[0].question;
     
-
     options.children[0].innerText = randomGeneratedQuestions[0].options[0];
     options.children[1].innerText = randomGeneratedQuestions[0].options[1];
     options.children[2].innerText = randomGeneratedQuestions[0].options[2];
     options.children[3].innerText = randomGeneratedQuestions[0].options[3];
 
-    //Valid answer
     correctAnswer = randomGeneratedQuestions[0].correct;
-    setCountdown(gameDifficulty);
 
-    // removing questios that were asked
     if (gameDifficulty === "Easy") {
         easyLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
     } else if(gameDifficulty === "Medium"){
         mediumLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
     }else{
         hardLvlQuestions.splice(randomGeneratedQuestions[0].id[0],1);
-    }
-    //set timer
-    
+    }    
 }
 
+/**
+ * This function returns the average of iq in percentage
+ * and the status based on the total correct answers
+ * @param {*} noOfValidAnswers 
+ * @returns 
+ */
 function averageOfCorrectAnswers(noOfValidAnswers){
     let average = (noOfValidAnswers / 8) * 100 ;  
     if(average >=0 && average <= 25){
@@ -336,12 +348,19 @@ function averageOfCorrectAnswers(noOfValidAnswers){
     }else if(average >= 75 && average <=100){
         return[average,"Gifted"];
     }else{
-        return ["Invalid average value","Not found"]
+        return ["Invalid average value","Not found"];
     }
 }
 
+/**
+ * This function set the countdown of 30 or 120 seconds based
+ * on the difficulty level orignally this code was taken from
+ * https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
+ * and was modified later.
+ * @param {*} gameDifficulty 
+ */
 function setCountdown(gameDifficulty){
-    clearInterval(timerId)
+    clearInterval(timerId);
     let timeLimit;
     if (gameDifficulty === 'Hard'){
         timeLimit = 120;

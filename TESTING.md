@@ -39,8 +39,14 @@ I used the recommended [W3C validator](https://validator.w3.org/) to validate my
 
 | File | Jigsaw URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| style.css | [Jigsaw]() | ![screenshot](/documentation/readme_img/) | Pass: No Errors |
+| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmbilalqureshi.github.io%2Fiq-quiz-game-js%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](/documentation/readme_img/css-validator.png) | Pass: No Errors |
 
+### JSHint 
+- I confirmed that no errors were returned when CSS code was passed through [jigsaw validator](https://jigsaw.w3.org/css-validator/).
+
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| script.js | ![screenshot](/documentation/readme_img/css-validator.png) | Pass: No Errors |
 
 ## Accessibility
 
