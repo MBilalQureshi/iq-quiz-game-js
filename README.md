@@ -10,16 +10,16 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 ## User Stories
 
 ### As a Challenger
-- I can nagivate through the website without any issue.
-- I can put my knowledege to test .
+- I can navigate through the website without any issue.
+- I can put my knowledge to test.
 - I can select from the levels of difficulty.
 - I can keep track of correct answers.
 - I can keep track of incorrect answers.
-- I can restart game once its over.
+- I can restart game once it’s over.
 - I can get my IQ level result in the end.
 
 ### As a Learner
-- I can navigate throughout this website witout an issue.
+- I can navigate throughout this website without an issue.
 - I can come back to learn again if certain answers are incorrect
 - I can see the score if an answer is incorrect for future reference.
 - I can select from the levels of difficulty.
@@ -33,7 +33,7 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 
 - Main Screen
     - On Main screen once user is greeted, he/she is asked to enter a username.
-    - The username should not exceed 10 charcters.
+    - The username should not exceed 10 characters.
 
 ![Screenshot of main screen](/documentation/readme_img/main-screen.png)
 
@@ -47,13 +47,13 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
     - User is able to select from one of four options.
     - For medium and easy difficulty 30 seconds are given but for hard difficulty 120 seconds are given.
     - Username and timer is given on the top of the screen.
-    - The corrent and incorrect counter is on the bottom. If the answer is correct or incorrect after clicking one of the option, the counter increases by one.
+    - The correct and incorrect counter is on the bottom. If the answer is correct or incorrect after clicking one of the option, the counter increases by one.
     - If the user is not able to provide answer in time, incorrect counter is increased by one.
 
 ![Screenshot of Question's Panel](/documentation/readme_img/questions-panel.png)
 
 - Loading Result
-    - Once last question is answered the timer stops and loading result appears in the bottom of last question to give more gaming experince.
+    - Once last question is answered the timer stops and loading result appears in the bottom of last question to give more gaming experience.
 
 ![Screenshot of Loading Result](/documentation/readme_img/loading-result.png)
 
@@ -73,12 +73,12 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 ### Frameworks Libraries and Programmes Used
 - [Font Awesome](https://fontawesome.com/) used for icons.
 - [GitHub](https://github.com/) used to host repository.
-- [GitPod](https://gitpod.io/) used to develop project and organise version control.
+- [GitPod](https://gitpod.io/) used to develop project and organize version control.
 - [GitHub Pages](https://pages.github.com/) used to deploy the site.
 - [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) for performance review.
-- [Cloud coverter](https://cloudconvert.com/webp-converter) to convert image.
+- [Cloud converter](https://cloudconvert.com/webp-converter) to convert image.
 - [Jigsaw](https://jigsaw.w3.org/css-validator/) for css validation.
-- [Jshint](https://jshint.com/) for javascrpt validation.
+- [Jshint](https://jshint.com/) for JavaScript validation.
 - [W3C Markup](https://validator.w3.org/)  for html validation.
 
 ## Testing
@@ -91,11 +91,11 @@ This website was deployed to GitHub pages. The steps of deployment are mentioned
 2. At the top of the page, click "Settings" button available in menu.
 3. Scroll down until you find "GitHub Pages" section and click it.
 4. Under the branch, there is a drop down. Select "Main" from it and click save.
-5. The same page will automatically refersh. 
+5. The same page will automatically refresh. 
 6. On top of "GitHub Pages", it is now mentioned that "Your site is live at https://mbilalqureshi.github.io/iq-quiz-game-js/".
 
 ### Forking the GitHub Repository
-With Forking one can make a copy of a repository and to view or make changes in it without affecting the orignal repository. Following are the steps to do this.
+With Forking one can make a copy of a repository and to view or make changes in it without affecting the original repository. Following are the steps to do this.
 1. Log in to GitHub and locate [IQ Quiz Game](https://github.com/MBilalQureshi/iq-quiz-game-js) repository.
 2. At the top right side of the page just below the navigation bar, locate the fork button.
 3. You will now have a copy of the repository.
@@ -111,7 +111,7 @@ With Forking one can make a copy of a repository and to view or make changes in 
 
 ## Credits
 ### Content
-- Basic concepts of using javascript along html ans css is understood from Code Institute's [Love Maths](https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode) project.
+- Basic concepts of using JavaScript along html and css is understood from Code Institute's [Love Maths](https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode) project.
 - The icons in header and favicon is taken from [Font awesome](https://fontawesome.com/)
 
 ### Media
@@ -131,3 +131,4 @@ With Forking one can make a copy of a repository and to view or make changes in 
 ### Acknowledgements
 - My Mentor Antonio Rodriguez for helpful feedbacks during project development.
 - Code Institute team for pointing in right direction.
+

@@ -1,4 +1,7 @@
 # Testing
+- I confirmed that input field can't be left empty.
+- I confirmed that both buttons work.
+- I confirmed that all the items of list are clickable.
 
 ## Browser Compatibility
 - I confirmed that this website works on following browsers.
@@ -42,7 +45,7 @@ I used the recommended [W3C validator](https://validator.w3.org/) to validate my
 | style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmbilalqureshi.github.io%2Fiq-quiz-game-js%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](/documentation/readme_img/css-validator.png) | Pass: No Errors |
 
 ### JSHint 
-- I confirmed that no errors were returned when CSS code was passed through [jigsaw validator](https://jigsaw.w3.org/css-validator/).
+- I confirmed that no errors were returned when JS code was passed through [jshint validator](https://jshint.com/).
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
@@ -52,7 +55,7 @@ I used the recommended [W3C validator](https://validator.w3.org/) to validate my
 
 ### Fonts and colors
 
-I confirmed that fonts and colors that are chosen are easy to read and enhances user experince.
+I confirmed that fonts and colors that are chosen are easy to read and enhances user experience.
 
 ### Lighthouse Audit
 - I have used lighthouse devtool after deployment to fix major issues. Issues found by Lighthouse is mentioned below.
@@ -65,5 +68,54 @@ Following are the results of Lighthouse audit of every page for mobile and deskt
 | Home | Mobile | ![screenshot](/documentation/readme_img/mobile-lighthouse.png) |
 | Home | Desktop | ![screenshot](/documentation/readme_img/desktop-lighthouse.png) |
 
+## List of bugs and issues
+1. Background image was not adjusting as per content on top of it.
+    #### Fix:
+    - Set height to 100vh.
+
+2. The main label was set to absolute which was causing it to fall on invalid position on different screens.
+    #### Fix:
+    - Set position to relative
+
+3. The username logo keeps moving to right on result screen.
+    #### Fix:
+    - Set position to absolute for username logo.
+    
+4. The text box get overflowed from left on small screens.
+    #### Fix:
+    - inside media query set width to -webkit-fill-available.
+
+5. Inside result section the header merges with the username logo.
+    #### Fix:
+    - Clear on both side was required one for username logo and other for timer.
+
+6. The timer function was not working at all. What I was getting was skipping of multiple seconds in one second after every question.
+    #### Fix:
+     - Used the solution provided in [this](https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward) and modified it later in program
+
+7. I had no idea how to make an array change its sequence randomly after each iteration.
+    #### Fix:
+    - I used the solution provided by [this](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s) you tuber.
+
+9. Currently there is an issue of "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'."
+    #### Fix:
+    - Requires no fix as this caused by Google's initiative (FLoC).
+
+10. I accidently put every event inside a for loop that caused multiple error.
+    #### Fix:
+    - Removed the for loop as it was not required anyway and move events in their locations.
+
+11. There were a few question where I didn't set the valid solution which caused unexpected behaviors.
+    #### Fix:
+    - Remove multiple correct answers set in list and set valid answers where not set.
+
+12. The input text was taking long strings as input of username.
+    #### Fix:
+    - Limit username length by 10 inside input tag.
+
+## Unfixed bugs
+- No unfixed bugs.
+
 Return back to the [README.md](/README.md) file.
+
 
