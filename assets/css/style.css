@@ -200,7 +200,7 @@ h2 {
 /* For larger to medium tablets */
 @media screen and (max-width: 780px)and (orientation: portrait) {
     #body-inner {
-        min-height: calc(110vh - 150px);
+        min-height: calc(115vh - 150px);
     }
 }
 
