@@ -5,7 +5,7 @@ In this website one can select the difficulty level and play the game on that le
 
 Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live website. 
 
-![Screenshot of IQ Quiz Game website mockup](/documentation/readme_img/mockup-update.png)
+![Screenshot of IQ Quiz Game website mockup](/documentation/readme_img/Mockup-p2-js.png)
 
 ## User Stories
 
