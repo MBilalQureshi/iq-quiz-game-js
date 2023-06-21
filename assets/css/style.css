@@ -42,7 +42,7 @@
     background-color: #fff;
 }
 
-/* pargraphs, button, lists and headings*/
+/* pargraphs, button, fonts */
 #user-name-label,
 #choose-difficulty-panel,
 #questions-sec,
@@ -181,7 +181,7 @@ h2 {
 }
 
 /* For big tablets */
-@media screen and (max-width: 780px), (orientation: landscape) {
+@media screen and (max-width: 780px) and (orientation: landscape) {
     #body-inner {
         min-height: calc(180vh - 150px);
     }
@@ -198,14 +198,14 @@ h2 {
 }
 
 /* For larger to medium tablets */
-@media screen and (max-width: 780px), (orientation: portrait) {
+@media screen and (max-width: 780px)and (orientation: portrait) {
     #body-inner {
         min-height: calc(110vh - 150px);
     }
 }
 
 /* For larger to medium tablets */
-@media screen and (max-width: 670px), (orientation: landscape) {
+@media screen and (max-width: 670px)and (orientation: landscape) {
     #body-inner {
         min-height: calc(115vh - 150px);
     }
@@ -223,7 +223,7 @@ h2 {
 }
 
 /* lanscape view for tablets and mobiles*/
-@media screen and (max-width: 500px), (orientation: landscape) {
+@media screen and (max-width: 500px)and (orientation: landscape) {
     #body-inner {
         min-height: calc(230vh - 150px);
     }
