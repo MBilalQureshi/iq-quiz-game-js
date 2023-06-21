@@ -157,16 +157,16 @@ h2 {
         min-height: calc(110vh - 150px);
     }
     .main-label {
-        top: 30%;
-        width: 90%;
+        top: 15%;
+        width: 70%;
         line-height: 70px;
     }
 }
 /* For Medium size Tablets */
 @media screen and (max-width: 780px) {
     .main-label {
+        width: 90%;
         line-height: 50px;
-        top: 20%;
     }
     p,
     input,
@@ -233,9 +233,6 @@ h2 {
 @media screen and (max-width: 455px) {
     #body-inner {
         min-height: calc(115vh - 150px);
-    }
-    .main-label {
-        top: 15%;
     }
 }
 
