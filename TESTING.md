@@ -109,7 +109,7 @@ Following are the results of Lighthouse audit of every page for mobile and deskt
     #### Fix:
     - Remove multiple correct answers set in list and set valid answers where not set.
 
-12. The input text was taking long strings as input of username.
+12. The username textarea was taking long strings as input.
     #### Fix:
     - Limit username length by 10 inside input tag.
 
