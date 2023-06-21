@@ -59,7 +59,7 @@ I confirmed that fonts and colors that are chosen are easy to read and enhances 
 
 ### Lighthouse Audit
 - I have used lighthouse devtool after deployment to fix major issues. Issues found by Lighthouse is mentioned below.
-    - Reduce background image sizes.
+    - Reduce background image size.
     
 Following are the results of Lighthouse audit of every page for mobile and desktop. Accessibility is 100 in every case.
 
