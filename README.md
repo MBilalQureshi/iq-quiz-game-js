@@ -128,14 +128,14 @@ With Forking one can make a copy of a repository and to view or make changes in 
 
 ### Extra Help
 - Shadow box effect is copied from [this](https://getcssscan.com/css-box-shadow-examples) link.  
-- Code of countdown is taken from [this](https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward) link.
+- Code of countdown is taken from [this](https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward) stackoverflow link.
 - IQ related questions are taken from following links:
     - [Link 1](https://www.proprofs.com/quiz-school/story.php?title=easy-iq-test)
     - [Link 2](https://www.proprofs.com/quiz-school/story.php?title=iq-test_70kt)
     - [Link 3](https://www.allthetests.com/iq-tests/quiz18/1139060031/very-difficult-iq-te)
     - [Link 4](https://www.proprofs.com/quiz-school/story.php?title=iq-test-unfinished)
 - Learned concept of select start disable concept inside js using [this](https://developer.mozilla.org/en-US/docs/Web/API/Node/selectstart_event) link.
-- Learned concept of generating random array from [this](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s) link.
+- Learned concept of generating random array from [this](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s) youtube video.
 
 ### Acknowledgements
 - My Mentor Antonio Rodriguez for helpful feedbacks during project development.
