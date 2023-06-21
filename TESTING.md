@@ -46,7 +46,7 @@ I used the recommended [W3C validator](https://validator.w3.org/) to validate my
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| script.js | ![screenshot](/documentation/readme_img/css-validator.png) | Pass: No Errors |
+| script.js | ![screenshot](/documentation/readme_img/jshint.png) | Pass: No Errors |
 
 ## Accessibility
 

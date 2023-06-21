@@ -1,7 +1,12 @@
 /**
- * Main wrapper for loading all DOM content
+ * This event calls the  Load DOM content function
  */
-document, addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', loadDomContent);
+
+/**
+ * This function loads all the content of the DOM on page load
+ */
+function loadDomContent() {
 
     const easyLvlQuestions = [{
             id: 1,
@@ -387,4 +392,4 @@ document, addEventListener('DOMContentLoaded', function() {
             }
         }, 1000);
     }
-});
+}

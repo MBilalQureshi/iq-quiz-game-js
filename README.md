@@ -65,9 +65,21 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 ![Screenshot of Loading Result](/documentation/readme_img/result-panel.png)
 
 ## Technologies Used
+### Languages Used
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
 - [JS](https://www.javascript.com/)
+
+### Frameworks Libraries and Programmes Used
+- [Font Awesome](https://fontawesome.com/) used for icons.
+- [GitHub](https://github.com/) used to host repository.
+- [GitPod](https://gitpod.io/) used to develop project and organise version control.
+- [GitHub Pages](https://pages.github.com/) used to deploy the site.
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) for performance review.
+- [Cloud coverter](https://cloudconvert.com/webp-converter) to convert image.
+- [Jigsaw](https://jigsaw.w3.org/css-validator/) for css validation.
+- [Jshint](https://jshint.com/) for javascrpt validation.
+- [W3C Markup](https://validator.w3.org/)  for html validation.
 
 ## Testing
 To see complete testing section, kindly click [here](/TESTING.md).
