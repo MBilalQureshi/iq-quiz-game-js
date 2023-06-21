@@ -1,7 +1,6 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300&family=Roboto&display=swap");
 
-
 * {
     padding: 0;
     margin: 0;
@@ -249,7 +248,8 @@ h2 {
         width: 95%;
         top: 50%;
     }
-    .user-logo-name, .timer-logo{
+    .user-logo-name,
+    .timer-logo {
         font-size: large;
     }
     p,

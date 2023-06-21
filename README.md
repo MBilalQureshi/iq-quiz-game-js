@@ -38,8 +38,12 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 ![Screenshot of main screen](/documentation/readme_img/main-screen.png)
 
 - Difficulty Panel
-    - Here user can select the difficulty of the game.
     - User name is visible on this screen.
+    - Here user can select the difficulty of the game. The questions are asked based on selected difficulty. It can be one of the following:
+    1. Easy
+    2. Medium
+    3. Hard
+    
 
 ![Screenshot of difficulty panel](/documentation/readme_img/select-difficulty.png)
 
@@ -54,13 +58,18 @@ Click [here](https://mbilalqureshi.github.io/iq-quiz-game-js/) to see the live w
 
 - Loading Result
     - Once last question is answered the timer stops and loading result appears in the bottom of last question to give more gaming experience.
+    - Currently loading time is set to 5 seconds.
 
 ![Screenshot of Loading Result](/documentation/readme_img/loading-result.png)
 
 - Result Panel
-    - Here user can see the total score.
-    - Average of his/her IQ.
-    - Status of the IQ.
+    - Here user can see the total score out of 8 questions.
+    - Average percentage of his/her IQ out of 100%.
+    - Status of the IQ. It can be one of these four
+    1. Gifted
+    2. Above average intelligence
+    3. Average intelligence
+    4. Below average intelligence
 
 ![Screenshot of Loading Result](/documentation/readme_img/result-panel.png)
 
